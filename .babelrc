@@ -1,0 +1,24 @@
+{
+  "presets": [
+    [
+      "next/babel",
+      {
+        "preset-env": {},
+        "transform-runtime": {},
+        "styled-jsx": {},
+        "class-properties": {}
+      }
+    ]
+  ],
+  "env": {
+    "development": {
+      "presets": [
+        ["@emotion/babel-preset-css-prop", { "sourceMap": true }]
+      ]
+    },
+    "production": {
+      "presets": [["@emotion/babel-preset-css-prop"]]
+    }
+  },
+  "plugins": ["macros"]
+}
