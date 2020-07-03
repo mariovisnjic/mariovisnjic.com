@@ -8,8 +8,7 @@ class MyApp extends App {
         return (
             <>
                 <Head>
-                    <title>Page Builder</title>
-                    {/** <Favicon /> */}
+                    <title>Mario Višnjić</title>
                 </Head>
                 <Component {...pageProps} />
             </>
