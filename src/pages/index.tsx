@@ -18,11 +18,7 @@ const Home: NextPage<Props> = () => {
                     Hosted on Netlify
                 </div>
                 <br />
-                <a
-                    href="https://mariovisnjic.com"
-                    target="_blank"
-                    rel="noreferrer"
-                >
+                <a href="https://mariovisnjic.com">
                     <img src="../static/home.png" style={{ height: '30px' }} />
                 </a>
                 <a
