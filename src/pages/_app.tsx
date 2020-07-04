@@ -9,6 +9,10 @@ class MyApp extends App {
             <>
                 <Head>
                     <title>Mario Višnjić</title>
+                    <link
+                        href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap"
+                        rel="stylesheet"
+                    />
                 </Head>
                 <Component {...pageProps} />
             </>
