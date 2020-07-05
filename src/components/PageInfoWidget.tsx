@@ -1,17 +1,17 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import styled from '@emotion/styled';
-import React from 'react';
+import React, { useContext } from 'react';
+
+import { ThemeContext, ThemeContextType } from '../util/themeContext';
 
 const WidgetStyle = styled.div`
-    position: absolute;
-    ${(props: WidgetStyleProps) => props.position}: 15px;
-    right: 15px;
     background: #fff;
-    padding: 5px 10px;
+    padding: 0 10px;
     border-radius: 50%;
-    border: 2px solid #7bdff2;
-    transition: all 0.1s, padding 0s;
+    border: 2px solid
+        ${(props: WidgetStyleProps) => props.theme.quaternaryColor};
+    transition: all 0.05s, padding 0s;
     max-width: 150px;
 
     div {
@@ -21,11 +21,17 @@ const WidgetStyle = styled.div`
     span {
         font-family: 'Fugaz One', cursive;
         font-size: 21px;
-        color: #7bdff2;
+        color: ${(props: WidgetStyleProps) => props.theme.quaternaryColor};
         font-weight: 600;
     }
+`;
 
-    &:hover {
+//wrapper as box to prevent flicker on hover
+const WidgetWrapper = styled.div`
+    position: absolute;
+    ${(props: WidgetStyleProps) => props.position}: 60px;
+    right: 15px;
+    ${WidgetStyle}:hover {
         border-radius: 0;
         padding: 20px 15px;
 
@@ -48,14 +54,20 @@ interface Props {
 
 interface WidgetStyleProps {
     position: string;
+    theme: ThemeContextType;
 }
 
 const PageInfoWidget = (props: Props): JSX.Element => {
+    const theme: ThemeContextType = useContext(ThemeContext);
+    const styleProps: WidgetStyleProps = { position: props.position, theme };
+
     return (
-        <WidgetStyle {...{ position: props.position }}>
-            <span>i</span>
-            <div>{props.children}</div>
-        </WidgetStyle>
+        <WidgetWrapper {...styleProps}>
+            <WidgetStyle {...styleProps}>
+                <span>i</span>
+                <div>{props.children}</div>
+            </WidgetStyle>
+        </WidgetWrapper>
     );
 };
 

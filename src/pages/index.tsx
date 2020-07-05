@@ -1,6 +1,7 @@
 import { NextPage } from 'next';
 import React from 'react';
 
+import Layout from '../components/Layout';
 import PageInfoWidget from '../components/PageInfoWidget';
 
 interface Props {
@@ -9,7 +10,7 @@ interface Props {
 
 const Home: NextPage<Props> = () => {
     return (
-        <div>
+        <Layout>
             <h1>mariovisnjic.com</h1>
 
             <PageInfoWidget position="top">
@@ -32,7 +33,7 @@ const Home: NextPage<Props> = () => {
                     />
                 </a>
             </PageInfoWidget>
-        </div>
+        </Layout>
     );
 };
 
