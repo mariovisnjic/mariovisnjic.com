@@ -6,7 +6,12 @@ import React, { useContext } from 'react';
 import { ThemeContext, ThemeContextType } from '../util/themeContext';
 
 const LayoutWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-between;
     background: ${(props: ThemeContextType) => props.tertiaryColor};
+    background-size: cover;
 `;
 
 const Header = styled.div`
@@ -21,9 +26,11 @@ const Header = styled.div`
 `;
 
 const Content = styled.div`
+    display: flex;
+    margin: 0 auto;
+    text-align: center;
     background: ${(props: ThemeContextType) => props.tertiaryColor};
-    min-height: 80vh;
-    min-height: calc(100vh - 121px);
+    padding: 20px;
 `;
 
 const Footer = styled.div`

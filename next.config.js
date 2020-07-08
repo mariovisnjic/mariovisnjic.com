@@ -2,8 +2,6 @@ const withFonts = require('next-fonts'); // eslint-disable-line @typescript-esli
 const withImages = require('next-images'); // eslint-disable-line @typescript-eslint/no-var-requires
 require('dotenv').config();
 
-/* Config
----------------------------------------------------- */
 module.exports = withFonts(
     withImages({
         webpack(config, { buildId, dev, isServer, defaultLoaders }) {
@@ -20,6 +18,13 @@ module.exports = withFonts(
             MONGO_PASSWORD: process.env.MONGO_PASSWORD,
             MONGO_DATABASE_NAME: process.env.MONGO_DATABASE_NAME,
             isProduction: process.env.NODE_ENV === 'production'
+        },
+
+        exportPathMap: () => {
+            return {
+                "/": { page: "/" },
+                "/chrome-notes-extension": { page: "/chromeNotesExtension" }
+            }
         },
 
         target: 'server'

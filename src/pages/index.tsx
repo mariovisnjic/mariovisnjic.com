@@ -1,7 +1,7 @@
 import { NextPage } from 'next';
 import React from 'react';
 
-import Layout from '../components/Layout';
+import CenteredLayout from '../components/CenteredLayout';
 import PageInfoWidget from '../components/PageInfoWidget';
 
 interface Props {
@@ -10,7 +10,7 @@ interface Props {
 
 const Home: NextPage<Props> = () => {
     return (
-        <Layout>
+        <CenteredLayout>
             <h1>mariovisnjic.com</h1>
 
             <PageInfoWidget position="top">
@@ -33,7 +33,7 @@ const Home: NextPage<Props> = () => {
                     />
                 </a>
             </PageInfoWidget>
-        </Layout>
+        </CenteredLayout>
     );
 };
 
