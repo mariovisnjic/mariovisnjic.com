@@ -1,4 +1,3 @@
-import { jsx } from '@emotion/core';
 import styled from '@emotion/styled';
 import { NextPage } from 'next';
 import React, { useContext, useEffect, useState } from 'react';
@@ -11,17 +10,52 @@ import { ThemeContext, ThemeContextType } from '../util/themeContext';
 const StepPick = styled.div`
     padding: 15px;
     display: flex;
+    align-items: center;
+    max-width: 300px;
+    ${(props: StepPickProps) =>
+        props.isActive &&
+        'box-shadow: 0px 0px 5px 1px rgb(' +
+            props.theme.quaternaryColorRGB +
+            ')'};
+    margin: 0 10px 10px;
+    transition: all 0.5s;
 
     span {
         font-size: 20px;
-        border: 1px solid ${(props: ThemeContextType) => props.quaternaryColor};
+        border: 1px solid
+            ${(props: StepPickProps) => props.theme.quaternaryColor};
         border-radius: 50%;
         padding: 2px 8px;
     }
+
+    p {
+        margin: 0 10px;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    @media all and (max-width: 640px) {
+        padding: 30px;
+        flex-direction: column;
+        max-width: 100%;
+    }
+`;
+
+const StepsWrapper = styled.div`
+    display: flex;
+    justify-content: center;
+    padding: 50px 0;
 `;
 
 interface Props {
     fakeProp: string;
+}
+
+interface StepPickProps {
+    theme: ThemeContextType;
+    isActive: boolean;
 }
 
 const Home: NextPage<Props> = () => {
@@ -36,39 +70,87 @@ const Home: NextPage<Props> = () => {
 
     return (
         <Layout>
-            <TitleSection mainTitle="CHROME NOTES EXTENSION" />
+            <TitleSection
+                mainTitle="CHROME NOTES EXTENSION"
+                backgroundImage="../static/chromeNotesExtension/title.png"
+                backgroundPosition="top right"
+            />
 
-            <StepPick {...theme} onMouseEnter={() => setShowSection(1)}>
-                <span>1</span>
-            </StepPick>
+            <StepsWrapper>
+                <div>
+                    <StepPick
+                        {...{ theme, isActive: showSection === 1 }}
+                        onMouseEnter={() => setShowSection(1)}
+                    >
+                        <span>1</span>
+                        <p>Create note on any page</p>
 
-            <StepPick {...theme} onMouseEnter={() => setShowSection(2)}>
-                <span>2</span>
-            </StepPick>
+                        {isMobile && (
+                            <img src="../static/chromeNotesExtension/step1.png" />
+                        )}
+                    </StepPick>
 
-            <StepPick {...theme} onMouseEnter={() => setShowSection(3)}>
-                <span>3</span>
-            </StepPick>
+                    <StepPick
+                        {...{ theme, isActive: showSection === 2 }}
+                        onMouseEnter={() => setShowSection(2)}
+                    >
+                        <span>2</span>
+                        <p>
+                            Extension will notify you if you have a note on
+                            current domain or page
+                        </p>
 
-            <StepPick {...theme} onMouseEnter={() => setShowSection(4)}>
-                <span>4</span>
-            </StepPick>
+                        {isMobile && (
+                            <img src="../static/chromeNotesExtension/step2.png" />
+                        )}
+                    </StepPick>
 
-            {(showSection === 1 || isMobile) && (
-                <img src="https://i.pinimg.com/originals/fc/ca/fa/fccafa6ce178ac8c1499abff6483a131.gif" />
-            )}
+                    <StepPick
+                        {...{ theme, isActive: showSection === 3 }}
+                        onMouseEnter={() => setShowSection(3)}
+                    >
+                        <span>3</span>
+                        <p>Icon will be yellow for same domain</p>
 
-            {(showSection === 2 || isMobile) && (
-                <img src="https://media2.giphy.com/media/u00BUvSb3L5cIQHhjw/giphy.gif" />
-            )}
+                        {isMobile && (
+                            <img src="../static/chromeNotesExtension/step3.png" />
+                        )}
+                    </StepPick>
 
-            {(showSection === 3 || isMobile) && (
-                <img src="https://thumbs.gfycat.com/HealthyFrenchGhostshrimp-size_restricted.gif" />
-            )}
+                    <StepPick
+                        {...{ theme, isActive: showSection === 4 }}
+                        onMouseEnter={() => setShowSection(4)}
+                    >
+                        <span>4</span>
+                        <p>
+                            Red icon and additional highlighting is present if
+                            note is on exact url
+                        </p>
 
-            {(showSection === 4 || isMobile) && (
-                <img src="https://media3.giphy.com/media/d1E1szXDsHUs3WvK/giphy.gif" />
-            )}
+                        {isMobile && (
+                            <img src="../static/chromeNotesExtension/step4.png" />
+                        )}
+                    </StepPick>
+                </div>
+
+                <div>
+                    {showSection === 1 && !isMobile && (
+                        <img src="../static/chromeNotesExtension/step1.png" />
+                    )}
+
+                    {showSection === 2 && !isMobile && (
+                        <img src="../static/chromeNotesExtension/step2.png" />
+                    )}
+
+                    {showSection === 3 && !isMobile && (
+                        <img src="../static/chromeNotesExtension/step3.png" />
+                    )}
+
+                    {showSection === 4 && !isMobile && (
+                        <img src="../static/chromeNotesExtension/step4.png" />
+                    )}
+                </div>
+            </StepsWrapper>
 
             <PageInfoWidget position="top">
                 <div>
