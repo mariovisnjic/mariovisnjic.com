@@ -80,6 +80,14 @@ const Home: NextPage<Props> = () => {
 
     const theme: ThemeContextType = useContext(ThemeContext);
 
+    const stepPickProps = (stepNumber) => {
+        return {
+            theme,
+            isActive: showSection === stepNumber,
+            isMobile
+        };
+    };
+
     return (
         <Layout>
             <TitleSection
@@ -91,7 +99,7 @@ const Home: NextPage<Props> = () => {
             <StepsWrapper>
                 <div>
                     <StepPick
-                        {...{ theme, isActive: showSection === 1, isMobile }}
+                        {...stepPickProps(1)}
                         onMouseEnter={() => setShowSection(1)}
                     >
                         <span>1</span>
@@ -103,7 +111,7 @@ const Home: NextPage<Props> = () => {
                     </StepPick>
 
                     <StepPick
-                        {...{ theme, isActive: showSection === 2, isMobile }}
+                        {...stepPickProps(2)}
                         onMouseEnter={() => setShowSection(2)}
                     >
                         <span>2</span>
@@ -118,7 +126,7 @@ const Home: NextPage<Props> = () => {
                     </StepPick>
 
                     <StepPick
-                        {...{ theme, isActive: showSection === 3, isMobile }}
+                        {...stepPickProps(3)}
                         onMouseEnter={() => setShowSection(3)}
                     >
                         <span>3</span>
@@ -130,7 +138,7 @@ const Home: NextPage<Props> = () => {
                     </StepPick>
 
                     <StepPick
-                        {...{ theme, isActive: showSection === 4, isMobile }}
+                        {...stepPickProps(4)}
                         onMouseEnter={() => setShowSection(4)}
                     >
                         <span>4</span>
@@ -144,7 +152,7 @@ const Home: NextPage<Props> = () => {
                         )}
                     </StepPick>
 
-                    <StepPick {...{ theme, isActive: false, isMobile }}>
+                    <StepPick {...stepPickProps(99)}>
                         <p>
                             Download it on{' '}
                             <a href="https://chrome.google.com/webstore/detail/chrome-note-extension/hgogikjgakjonhalnhlmbcggmajhdgli">
