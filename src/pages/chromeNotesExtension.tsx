@@ -49,6 +49,12 @@ const StepsWrapper = styled.div`
     padding: 50px 0;
 `;
 
+const HiddenPreload = styled.div`
+    display: none;
+    opacity: 0;
+    visibility: 0;
+`;
+
 interface Props {
     fakeProp: string;
 }
@@ -150,6 +156,14 @@ const Home: NextPage<Props> = () => {
                         <img src="../static/chromeNotesExtension/step4.png" />
                     )}
                 </div>
+
+                {/*This will preload images and avoid twitchiness when toggling steps*/}
+                <HiddenPreload>
+                    <img src="../static/chromeNotesExtension/step1.png" />
+                    <img src="../static/chromeNotesExtension/step2.png" />
+                    <img src="../static/chromeNotesExtension/step3.png" />
+                    <img src="../static/chromeNotesExtension/step4.png" />
+                </HiddenPreload>
             </StepsWrapper>
 
             <PageInfoWidget position="top">
