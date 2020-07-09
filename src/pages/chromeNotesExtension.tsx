@@ -14,6 +14,7 @@ const StepPick = styled.div`
     max-width: 300px;
     ${(props: StepPickProps) =>
         props.isActive &&
+        !props.isMobile &&
         'box-shadow: 0px 0px 5px 1px rgb(' +
             props.theme.quaternaryColorRGB +
             ')'};
@@ -34,6 +35,10 @@ const StepPick = styled.div`
 
     img {
         width: 100%;
+    }
+
+    a {
+        color: ${(props: StepPickProps) => props.theme.quaternaryColor};
     }
 
     @media all and (max-width: 640px) {
@@ -62,6 +67,7 @@ interface Props {
 interface StepPickProps {
     theme: ThemeContextType;
     isActive: boolean;
+    isMobile: boolean;
 }
 
 const Home: NextPage<Props> = () => {
@@ -85,7 +91,7 @@ const Home: NextPage<Props> = () => {
             <StepsWrapper>
                 <div>
                     <StepPick
-                        {...{ theme, isActive: showSection === 1 }}
+                        {...{ theme, isActive: showSection === 1, isMobile }}
                         onMouseEnter={() => setShowSection(1)}
                     >
                         <span>1</span>
@@ -97,7 +103,7 @@ const Home: NextPage<Props> = () => {
                     </StepPick>
 
                     <StepPick
-                        {...{ theme, isActive: showSection === 2 }}
+                        {...{ theme, isActive: showSection === 2, isMobile }}
                         onMouseEnter={() => setShowSection(2)}
                     >
                         <span>2</span>
@@ -112,7 +118,7 @@ const Home: NextPage<Props> = () => {
                     </StepPick>
 
                     <StepPick
-                        {...{ theme, isActive: showSection === 3 }}
+                        {...{ theme, isActive: showSection === 3, isMobile }}
                         onMouseEnter={() => setShowSection(3)}
                     >
                         <span>3</span>
@@ -124,7 +130,7 @@ const Home: NextPage<Props> = () => {
                     </StepPick>
 
                     <StepPick
-                        {...{ theme, isActive: showSection === 4 }}
+                        {...{ theme, isActive: showSection === 4, isMobile }}
                         onMouseEnter={() => setShowSection(4)}
                     >
                         <span>4</span>
@@ -136,6 +142,15 @@ const Home: NextPage<Props> = () => {
                         {isMobile && (
                             <img src="../static/chromeNotesExtension/step4.png" />
                         )}
+                    </StepPick>
+
+                    <StepPick {...{ theme, isActive: false, isMobile }}>
+                        <p>
+                            Download it on{' '}
+                            <a href="https://chrome.google.com/webstore/detail/chrome-note-extension/hgogikjgakjonhalnhlmbcggmajhdgli">
+                                Chrome web store
+                            </a>
+                        </p>
                     </StepPick>
                 </div>
 
@@ -168,15 +183,15 @@ const Home: NextPage<Props> = () => {
 
             <PageInfoWidget position="top">
                 <div>
-                    This page is made and statically generated with Next.js.
-                    Hosted on Netlify
+                    Chrome extension is made with HTML, CSS, JS and Chrome api
+                    for controlling tabs, reading URLs and saving notes to user.
                 </div>
                 <br />
                 <a href="https://mariovisnjic.com">
                     <img src="../static/home.png" style={{ height: '30px' }} />
                 </a>
                 <a
-                    href="https://github.com/mariovisnjic/mariovisnjic.com"
+                    href="https://github.com/mariovisnjic/chromeNotesExtension"
                     target="_blank"
                     rel="noreferrer"
                 >
