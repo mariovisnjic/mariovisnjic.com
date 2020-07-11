@@ -42,7 +42,7 @@ const StepPick = styled.div`
     }
 
     @media all and (max-width: 640px) {
-        padding: 30px;
+        padding: 30px 5px;
         flex-direction: column;
         max-width: 100%;
     }
@@ -71,7 +71,7 @@ interface StepPickProps {
 }
 
 const Home: NextPage<Props> = () => {
-    const [showSection, setShowSection] = useState(1);
+    const [activeStep, setActiveStep] = useState(1);
     const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
@@ -83,7 +83,7 @@ const Home: NextPage<Props> = () => {
     const stepPickProps = (stepNumber) => {
         return {
             theme,
-            isActive: showSection === stepNumber,
+            isActive: activeStep === stepNumber,
             isMobile
         };
     };
@@ -100,7 +100,7 @@ const Home: NextPage<Props> = () => {
                 <div>
                     <StepPick
                         {...stepPickProps(1)}
-                        onMouseEnter={() => setShowSection(1)}
+                        onMouseEnter={() => setActiveStep(1)}
                     >
                         <span>1</span>
                         <p>Create note on any page</p>
@@ -112,7 +112,7 @@ const Home: NextPage<Props> = () => {
 
                     <StepPick
                         {...stepPickProps(2)}
-                        onMouseEnter={() => setShowSection(2)}
+                        onMouseEnter={() => setActiveStep(2)}
                     >
                         <span>2</span>
                         <p>
@@ -127,7 +127,7 @@ const Home: NextPage<Props> = () => {
 
                     <StepPick
                         {...stepPickProps(3)}
-                        onMouseEnter={() => setShowSection(3)}
+                        onMouseEnter={() => setActiveStep(3)}
                     >
                         <span>3</span>
                         <p>Icon will be yellow for same domain</p>
@@ -139,7 +139,7 @@ const Home: NextPage<Props> = () => {
 
                     <StepPick
                         {...stepPickProps(4)}
-                        onMouseEnter={() => setShowSection(4)}
+                        onMouseEnter={() => setActiveStep(4)}
                     >
                         <span>4</span>
                         <p>
@@ -163,19 +163,19 @@ const Home: NextPage<Props> = () => {
                 </div>
 
                 <div>
-                    {showSection === 1 && !isMobile && (
+                    {activeStep === 1 && !isMobile && (
                         <img src="../static/chromeNotesExtension/step1.png" />
                     )}
 
-                    {showSection === 2 && !isMobile && (
+                    {activeStep === 2 && !isMobile && (
                         <img src="../static/chromeNotesExtension/step2.png" />
                     )}
 
-                    {showSection === 3 && !isMobile && (
+                    {activeStep === 3 && !isMobile && (
                         <img src="../static/chromeNotesExtension/step3.png" />
                     )}
 
-                    {showSection === 4 && !isMobile && (
+                    {activeStep === 4 && !isMobile && (
                         <img src="../static/chromeNotesExtension/step4.png" />
                     )}
                 </div>
