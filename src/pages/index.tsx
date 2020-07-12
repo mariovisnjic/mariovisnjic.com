@@ -12,12 +12,23 @@ import { ThemeContext, ThemeContextType } from '../util/themeContext';
 
 const MainWrap = styled.div`
     display: flex;
-    min-width: 800px;
+    min-width: 640px;
     align-items: center;
+
+    @media all and (max-width: 640px) {
+        flex-direction: column;
+        min-width: 100%;
+    }
 `;
 
 const TogglerWrapper = styled.div`
     width: 110px;
+
+    @media all and (max-width: 640px) {
+        display: flex;
+        flex-direction: row;
+        min-width: 100%;
+    }
 `;
 
 const Toggler = styled.div`
@@ -31,6 +42,7 @@ const Toggler = styled.div`
     top: -5px;
     left: -5px;
     margin-bottom: 10px;
+    border-radius: 4px;
 
     &:active {
         top: 0;
@@ -38,9 +50,9 @@ const Toggler = styled.div`
     }
 `;
 
-const DisplayWrapper = styled.div``;
-
-const SectionDisplay = styled.div``;
+const DisplayWrapper = styled.div`
+    width: 80vw;
+`;
 
 interface Props {
     fakeProp: string;

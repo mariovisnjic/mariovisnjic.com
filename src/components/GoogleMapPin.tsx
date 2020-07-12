@@ -1,4 +1,17 @@
+import styled from '@emotion/styled';
 import React from 'react';
+
+const Pin = styled.div`
+    width: 30px;
+    height: 30px;
+    position: relative;
+    left: -10px;
+    top: -25px;
+
+    img {
+        width: 100%;
+    }
+`;
 
 interface PinProps {
     text?: string;
@@ -7,9 +20,9 @@ interface PinProps {
 }
 
 const GoogleMapPin: React.FC<PinProps> = ({ text }: PinProps): JSX.Element => (
-    <div className="pin">
+    <Pin>
         <img src="../static/pin.png" />
-    </div>
+    </Pin>
 );
 
 export default GoogleMapPin;
