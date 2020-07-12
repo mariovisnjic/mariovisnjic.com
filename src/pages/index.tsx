@@ -50,6 +50,12 @@ const Toggler = styled.div`
     }
 `;
 
+const HiddenPreload = styled.div`
+    display: none;
+    opacity: 0;
+    visibility: 0;
+`;
+
 const DisplayWrapper = styled.div`
     width: 80vw;
 `;
@@ -113,6 +119,12 @@ const Home: NextPage<Props> = () => {
                         />
                     </a>
                 </PageInfoWidget>
+
+                {/*This will preload images and avoid twitchiness when toggling steps*/}
+                <HiddenPreload>
+                    <img src="../static/indexPage/ekonomski-rijeka.jpg" />
+                    <img src="../static/indexPage/gimnazija-karlovac.jpg" />
+                </HiddenPreload>
             </MainWrap>
         </CenteredLayout>
     );
