@@ -72,7 +72,7 @@ const FormSubmit = styled.div`
         width: 100px;
         font-size: 16px;
         border-radius: 4px;
-        background: ${(props: ThemeContextType) => props.secondaryColor};
+        background: ${(props: ThemeContextType) => props.primaryColor};
     }
 `;
 

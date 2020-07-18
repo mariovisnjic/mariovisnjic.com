@@ -25,18 +25,21 @@ const TogglerWrapper = styled.div`
     width: 110px;
 
     @media all and (max-width: 640px) {
-        display: flex;
+        display: inline-block;
         flex-direction: row;
         min-width: 100%;
     }
 `;
 
 const Toggler = styled.div`
-    background: ${(props: ThemeContextType) => props.secondaryColor};
+    background: ${(props: TogglerProps) => props.theme.primaryColor};
     cursor: pointer;
     color: white;
     padding: 10px;
-    box-shadow: inset 0 -8px 10px -10px #000000;
+    box-shadow: ${(props: TogglerProps) =>
+        props.selectedSection
+            ? '0 0px 20px 0 ' + props.theme.quaternaryColor
+            : 'inset 0 -8px 10px -10px #000000'};
     transition: all 0.2s;
     position: relative;
     top: -5px;
@@ -47,6 +50,11 @@ const Toggler = styled.div`
     &:active {
         top: 0;
         left: 0;
+    }
+
+    @media all and (max-width: 640px) {
+        margin: 5px;
+        display: inline-block;
     }
 `;
 
@@ -62,6 +70,11 @@ const DisplayWrapper = styled.div`
 
 interface Props {
     fakeProp: string;
+}
+
+interface TogglerProps {
+    theme: ThemeContextType;
+    selectedSection: boolean;
 }
 
 const sectionsNames = ['ABOUT', 'EXPERIENCE', 'EDUCATION', 'PROJECTS'];
@@ -83,7 +96,10 @@ const Home: NextPage<Props> = () => {
                 <TogglerWrapper {...theme}>
                     {sectionsNames.map((section, i) => (
                         <Toggler
-                            {...theme}
+                            {...{
+                                theme,
+                                selectedSection: selectedSection === section
+                            }}
                             key={i}
                             onClick={() => setSelectedSection(section)}
                         >

@@ -18,6 +18,11 @@ const Header = styled.div`
     font-size: 22px;
     color: white;
     font-weight: 600;
+
+    a {
+        color: white;
+        text-decoration: none;
+    }
 `;
 
 const Content = styled.div`
@@ -48,7 +53,9 @@ const CenteredLayout: React.FC = (props: Props): JSX.Element => {
 
     return (
         <LayoutWrapper {...theme}>
-            <Header {...theme}>mariovisnjic.com</Header>
+            <Header {...theme}>
+                <a href="https://mariovisnjic.com">mariovisnjic.com</a>
+            </Header>
 
             <Content {...theme}>{props.children}</Content>
 

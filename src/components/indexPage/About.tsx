@@ -74,8 +74,8 @@ const About: React.FC = (): JSX.Element => {
 
     const location = {
         address: 'Rijeka, Croatia',
-        lat: 45.342828,
-        lng: 14.38949
+        lat: 45.327061,
+        lng: 14.441307
     };
 
     return (

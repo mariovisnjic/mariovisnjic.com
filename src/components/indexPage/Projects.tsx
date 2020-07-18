@@ -1,16 +1,29 @@
+import styled from '@emotion/styled';
 import { NextPage } from 'next';
-import React, { useContext } from 'react';
+import React from 'react';
 
-import { ThemeContext, ThemeContextType } from '../../util/themeContext';
+const ProjectsWrapper = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
 
-interface Props {
-    fakeProp?: string;
-}
+    li {
+        margin-top: 20px;
+        text-align: left;
+    }
+`;
 
-const Projects: NextPage<Props> = () => {
-    const theme: ThemeContextType = useContext(ThemeContext);
-
-    return <div>{JSON.stringify(theme)}</div>;
+const Projects: NextPage = () => {
+    return (
+        <ProjectsWrapper>
+            <ul>
+                <a href="https://mariovisnjic.com/chrome-notes-extension">
+                    <li>Chrome notes extension</li>
+                </a>
+            </ul>
+        </ProjectsWrapper>
+    );
 };
 
 export default Projects;
