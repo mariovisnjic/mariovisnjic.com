@@ -163,6 +163,7 @@ const Experience: NextPage<Props> = () => {
                             data-netlify="true"
                             encType="application/x-www-form-urlencoded"
                         >
+                            <input type="hidden" name="form-name" value="contact" />
                             <label>
                                 Name <br />
                                 <input type="text" name="userName" />
