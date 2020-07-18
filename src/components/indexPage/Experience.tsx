@@ -101,9 +101,6 @@ interface BoxProps {
 const Experience: NextPage<Props> = () => {
     const theme: ThemeContextType = useContext(ThemeContext);
     const [didMount, setDidMount] = useState(false);
-    const [name, nameChange] = useState('');
-    const [email, emailChange] = useState('');
-    const [message, messageChange] = useState('');
     const [formSubmitted, setFormSubmitted] = useState(false);
 
     useEffect(() => {
@@ -165,43 +162,33 @@ const Experience: NextPage<Props> = () => {
                             method="post"
                             data-netlify="true"
                             data-netlify-honeypot="bot-field"
-                            action="/form-success"
+                            onSubmit={() => setFormSubmitted(true)}
                         >
                             <input
                                 type="hidden"
                                 name="form-name"
                                 value="contact"
                             />
-                            <label style={{ display: 'none' }}>
+
+                            <FormInput style={{ display: 'none' }}>
                                 Don’t fill this out if you&apos;re human:{' '}
-                                <input name="bot-field" hidden />
-                            </label>
+                                <input name="bot-field" type="hidden" />
+                            </FormInput>
+
                             <FormInput>
                                 <label>
                                     Name <br />
-                                    <input
-                                        type="text"
-                                        name="name"
-                                        value={name}
-                                        onChange={(e) =>
-                                            nameChange(e.target.value)
-                                        }
-                                    />
+                                    <input type="text" name="name" />
                                 </label>
                             </FormInput>
+
                             <FormInput>
                                 <label>
                                     Email <br />
-                                    <input
-                                        type="email"
-                                        name="email"
-                                        value={email}
-                                        onChange={(e) =>
-                                            emailChange(e.target.value)
-                                        }
-                                    />
+                                    <input type="email" name="email" />
                                 </label>
                             </FormInput>
+
                             <FormInput>
                                 <label>
                                     Message <br />
@@ -209,10 +196,6 @@ const Experience: NextPage<Props> = () => {
                                         cols={32}
                                         rows={7}
                                         name="message"
-                                        value={message}
-                                        onChange={(e) =>
-                                            messageChange(e.target.value)
-                                        }
                                     />
                                 </label>
                             </FormInput>
