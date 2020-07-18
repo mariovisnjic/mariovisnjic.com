@@ -121,7 +121,9 @@ const Experience: NextPage<Props> = () => {
             .join('&');
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = () => {
+        setFormSubmitted(true);
+        /*
         e.preventDefault();
 
         fetch('/', {
@@ -132,8 +134,8 @@ const Experience: NextPage<Props> = () => {
                 ...{ name, email, message }
             })
         })
-            .then(() => setFormSubmitted(true))
-            .catch((error) => alert(error));
+            .then(() => )
+            .catch((error) => alert(error));*/
     };
 
     return (
