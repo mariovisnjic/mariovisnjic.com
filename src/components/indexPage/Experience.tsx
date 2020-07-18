@@ -188,6 +188,7 @@ const Experience: NextPage<Props> = () => {
 
                         <form
                             name="contact"
+                            method="POST"
                             data-netlify="true"
                             netlify-honeypot="bot-field"
                             onSubmit={(e) => handleSubmit(e)}
