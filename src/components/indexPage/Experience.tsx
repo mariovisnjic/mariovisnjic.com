@@ -119,23 +119,21 @@ const Experience: NextPage<Props> = () => {
                     encodeURIComponent(data[key])
             )
             .join('&');
-    };
+    }
 
-    const handleSubmit = () => {
-        setFormSubmitted(true);
-        /*
+    const handleSubmit = (e) => {
         e.preventDefault();
-
+        const form = e.target;
         fetch('/', {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
             body: encode({
-                'form-name': 'contact',
+                'form-name': form.getAttribute('name'),
                 ...{ name, email, message }
             })
         })
-            .then(() => )
-            .catch((error) => alert(error));*/
+            .then(() => setFormSubmitted(true))
+            .catch((error) => alert(error));
     };
 
     return (
@@ -190,12 +188,17 @@ const Experience: NextPage<Props> = () => {
 
                         <form
                             name="contact"
-                            method="POST"
+                            method="post"
                             data-netlify="true"
-                            netlify-honeypot="bot-field"
+                            data-netlify-honeypot="bot-field"
                             action="#"
-                            onSubmit={() => handleSubmit()}
+                            onSubmit={handleSubmit}
                         >
+                            <input
+                                type="hidden"
+                                name="form-name"
+                                value="contact"
+                            />
                             <label style={{ display: 'none' }}>
                                 Don’t fill this out if you&apos;re human:{' '}
                                 <input name="bot-field" hidden />
