@@ -161,46 +161,24 @@ const Experience: NextPage<Props> = () => {
                             name="contact"
                             method="post"
                             data-netlify="true"
-                            data-netlify-honeypot="bot-field"
+                            encType="application/x-www-form-urlencoded"
                         >
-                            <input
-                                type="hidden"
-                                name="form-name"
-                                value="contact"
-                            />
+                            <label>
+                                Name <br />
+                                <input type="text" name="userName" />
+                            </label>
 
+                            <label>
+                                Email <br />
+                                <input type="email" name="email" />
+                            </label>
 
-                                Don’t fill this out if you&apos;re human:{' '}
-                                <input name="bot-field" type="hidden" />
+                            <label>
+                                Message <br />
+                                <textarea cols={32} rows={7} name="message" />
+                            </label>
 
-
-
-                                <label>
-                                    Name <br />
-                                    <input type="text" name="name" />
-                                </label>
-
-
-
-                                <label>
-                                    Email <br />
-                                    <input type="email" name="email" />
-                                </label>
-
-
-
-                                <label>
-                                    Message <br />
-                                    <textarea
-                                        cols={32}
-                                        rows={7}
-                                        name="message"
-                                    />
-                                </label>
-
-
-                                <button type="submit">Send</button>
-
+                            <button type="submit">Send</button>
                         </form>
                     </div>
                 ) : (
