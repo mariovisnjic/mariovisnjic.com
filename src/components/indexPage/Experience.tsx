@@ -162,7 +162,6 @@ const Experience: NextPage<Props> = () => {
                             method="post"
                             data-netlify="true"
                             data-netlify-honeypot="bot-field"
-                            onSubmit={() => setFormSubmitted(true)}
                         >
                             <input
                                 type="hidden"
