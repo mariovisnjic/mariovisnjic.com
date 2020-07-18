@@ -170,26 +170,26 @@ const Experience: NextPage<Props> = () => {
                                 value="contact"
                             />
 
-                            <FormInput style={{ display: 'none' }}>
+
                                 Don’t fill this out if you&apos;re human:{' '}
                                 <input name="bot-field" type="hidden" />
-                            </FormInput>
 
-                            <FormInput>
+
+
                                 <label>
                                     Name <br />
                                     <input type="text" name="name" />
                                 </label>
-                            </FormInput>
 
-                            <FormInput>
+
+
                                 <label>
                                     Email <br />
                                     <input type="email" name="email" />
                                 </label>
-                            </FormInput>
 
-                            <FormInput>
+
+
                                 <label>
                                     Message <br />
                                     <textarea
@@ -198,10 +198,10 @@ const Experience: NextPage<Props> = () => {
                                         name="message"
                                     />
                                 </label>
-                            </FormInput>
-                            <FormSubmit {...theme}>
+
+
                                 <button type="submit">Send</button>
-                            </FormSubmit>
+
                         </form>
                     </div>
                 ) : (
