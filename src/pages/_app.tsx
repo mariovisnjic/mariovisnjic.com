@@ -18,6 +18,16 @@ class MyApp extends App {
                         rel="stylesheet"
                     />
                 </Head>
+                {/*static form needed for netlify*/}
+                <form
+                    name="contact"
+                    data-netlify="true"
+                    netlify-honeypot="bot-field"
+                >
+                    <input type="text" name="name" />
+                    <input type="email" name="email" />
+                    <textarea name="message" />
+                </form>
                 <Component {...pageProps} />
                 <style jsx global>{`
                     body {

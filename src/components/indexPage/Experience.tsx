@@ -163,23 +163,40 @@ const Experience: NextPage<Props> = () => {
                             data-netlify="true"
                             encType="application/x-www-form-urlencoded"
                         >
-                            <input type="hidden" name="form-name" value="contact" />
-                            <label>
-                                Name <br />
-                                <input type="text" name="userName" />
-                            </label>
+                            <input
+                                type="hidden"
+                                name="form-name"
+                                value="contact"
+                            />
 
-                            <label>
-                                Email <br />
-                                <input type="email" name="email" />
-                            </label>
+                            <FormInput>
+                                <label>
+                                    Name <br />
+                                    <input type="text" name="userName" />
+                                </label>
+                            </FormInput>
 
-                            <label>
-                                Message <br />
-                                <textarea cols={32} rows={7} name="message" />
-                            </label>
+                            <FormInput>
+                                <label>
+                                    Email <br />
+                                    <input type="email" name="email" />
+                                </label>
+                            </FormInput>
 
-                            <button type="submit">Send</button>
+                            <FormInput>
+                                <label>
+                                    Message <br />
+                                    <textarea
+                                        cols={32}
+                                        rows={7}
+                                        name="message"
+                                    />
+                                </label>
+                            </FormInput>
+
+                            <FormSubmit {...theme}>
+                                <button type="submit">Send</button>
+                            </FormSubmit>
                         </form>
                     </div>
                 ) : (
