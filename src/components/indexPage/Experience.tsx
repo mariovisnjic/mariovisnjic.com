@@ -165,7 +165,7 @@ const Experience: NextPage<Props> = () => {
                             method="post"
                             data-netlify="true"
                             data-netlify-honeypot="bot-field"
-                            action="/formSuccess"
+                            action="/form-success"
                         >
                             <input
                                 type="hidden"

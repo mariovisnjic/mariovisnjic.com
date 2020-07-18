@@ -24,7 +24,8 @@ module.exports = withFonts(
         exportPathMap: () => {
             return {
                 "/": { page: "/" },
-                "/chrome-notes-extension": { page: "/chromeNotesExtension" }
+                "/chrome-notes-extension": { page: "/chromeNotesExtension" },
+                "/form-success": { page: "/formSuccess" },
             }
         },
 
