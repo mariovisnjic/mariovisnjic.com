@@ -191,11 +191,12 @@ const Experience: NextPage<Props> = () => {
                             method="POST"
                             data-netlify="true"
                             netlify-honeypot="bot-field"
+                            action="#"
                             onSubmit={(e) => handleSubmit(e)}
                         >
                             <label style={{ display: 'none' }}>
                                 Don’t fill this out if you&apos;re human:{' '}
-                                <input name="bot-field" />
+                                <input name="bot-field" hidden />
                             </label>
                             <FormInput>
                                 <label>
