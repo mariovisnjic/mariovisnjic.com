@@ -194,7 +194,7 @@ const Experience: NextPage<Props> = () => {
                             data-netlify="true"
                             netlify-honeypot="bot-field"
                             action="#"
-                            onSubmit={(e) => handleSubmit(e)}
+                            onSubmit={() => handleSubmit()}
                         >
                             <label style={{ display: 'none' }}>
                                 Don’t fill this out if you&apos;re human:{' '}
