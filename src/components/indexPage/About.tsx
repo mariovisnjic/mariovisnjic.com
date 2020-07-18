@@ -58,16 +58,12 @@ const Block4 = styled.div`
     transition: opacity 0.5s, bottom 1s;
 `;
 
-interface Props {
-    fakeProp?: string;
-}
-
 interface BlockProps {
     theme: ThemeContextType;
     didMount: boolean;
 }
 
-const About: React.FC<Props> = (props: Props): JSX.Element => {
+const About: React.FC = (): JSX.Element => {
     const [didMount, setDidMount] = useState(false);
     const theme: ThemeContextType = useContext(ThemeContext);
     const blockProps = { didMount, theme };

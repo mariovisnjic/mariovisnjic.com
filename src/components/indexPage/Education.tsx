@@ -64,7 +64,7 @@ const Education: NextPage<Props> = () => {
                 {...{
                     theme,
                     background:
-                        '../../../static/indexPage/gimnazija-karlovac.jpg',
+                        '../../../static/indexPage/school/gimnazija-karlovac.jpg',
                     didMount
                 }}
             >
@@ -80,7 +80,7 @@ const Education: NextPage<Props> = () => {
                 {...{
                     theme,
                     background:
-                        '../../../static/indexPage/ekonomski-rijeka.jpg',
+                        '../../../static/indexPage/school/ekonomski-rijeka.jpg',
                     didMount
                 }}
             >
@@ -97,7 +97,7 @@ const Education: NextPage<Props> = () => {
                 <br />
                 Masters Degree 2015-2017
                 <br />
-                Thesis: Analysis of advertising services on the internet
+                Thesis: Analysis of advertising services on the Internet
                 <br />
             </School>
         </EducationWrap>

@@ -122,8 +122,8 @@ const Home: NextPage<Props> = () => {
 
                 {/*This will preload images and avoid twitchiness when toggling steps*/}
                 <HiddenPreload>
-                    <img src="../static/indexPage/ekonomski-rijeka.jpg" />
-                    <img src="../static/indexPage/gimnazija-karlovac.jpg" />
+                    <img src="../static/indexPage/school/ekonomski-rijeka.jpg" />
+                    <img src="../static/indexPage/school/gimnazija-karlovac.jpg" />
                 </HiddenPreload>
             </MainWrap>
         </CenteredLayout>
