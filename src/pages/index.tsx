@@ -124,6 +124,15 @@ const Home: NextPage<Props> = () => {
                 <HiddenPreload>
                     <img src="../static/indexPage/school/ekonomski-rijeka.jpg" />
                     <img src="../static/indexPage/school/gimnazija-karlovac.jpg" />
+                    <img src="../static/indexPage/techStack/react.png" />
+                    <img src="../static/indexPage/techStack/tsjs.png" />
+                    <img src="../static/indexPage/techStack/node.png" />
+                    <img src="../static/indexPage/techStack/next.png" />
+                    <img src="../static/indexPage/techStack/vue.png" />
+                    <img src="../static/indexPage/techStack/php.png" />
+                    <img src="../static/indexPage/techStack/graphql.png" />
+                    <img src="../static/indexPage/techStack/apollo.png" />
+                    <img src="../static/indexPage/kompare.png" />
                 </HiddenPreload>
             </MainWrap>
         </CenteredLayout>
