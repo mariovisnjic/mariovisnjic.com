@@ -101,10 +101,40 @@ interface BoxProps {
 const Experience: NextPage<Props> = () => {
     const theme: ThemeContextType = useContext(ThemeContext);
     const [didMount, setDidMount] = useState(false);
+    const [name, nameChange] = useState('');
+    const [email, emailChange] = useState('');
+    const [message, messageChange] = useState('');
+    const [formSubmitted, setFormSubmitted] = useState(false);
 
     useEffect(() => {
         setTimeout(() => setDidMount(true), 200);
     }, []);
+
+    const encode = (data) => {
+        return Object.keys(data)
+            .map(
+                (key) =>
+                    encodeURIComponent(key) +
+                    '=' +
+                    encodeURIComponent(data[key])
+            )
+            .join('&');
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: encode({
+                'form-name': 'contact',
+                ...{ name, email, message }
+            })
+        })
+            .then(() => setFormSubmitted(true))
+            .catch((error) => alert(error));
+    };
 
     return (
         <ExperienceWrap>
@@ -152,38 +182,68 @@ const Experience: NextPage<Props> = () => {
                 </ImgWrap>
             </Box>
             <Box {...{ theme, didMount }}>
-                Interested? Contact me.
-                <form
-                    name="contact"
-                    data-netlify="true"
-                    netlify-honeypot="bot-field"
-                >
-                    <label style={{ display: 'none' }}>
-                        Don’t fill this out if you&apos;re human:{' '}
-                        <input name="bot-field" />
-                    </label>
-                    <FormInput>
-                        <label>
-                            Name <br />
-                            <input type="text" name="name" />
-                        </label>
-                    </FormInput>
-                    <FormInput>
-                        <label>
-                            Email <br />
-                            <input type="email" name="email" />
-                        </label>
-                    </FormInput>
-                    <FormInput>
-                        <label>
-                            Message <br />
-                            <textarea cols={32} rows={7} name="message" />
-                        </label>
-                    </FormInput>
-                    <FormSubmit {...theme}>
-                        <button type="submit">Send</button>
-                    </FormSubmit>
-                </form>
+                {!formSubmitted ? (
+                    <div>
+                        <p>Interested? Contact me.</p>
+
+                        <form
+                            name="contact"
+                            data-netlify="true"
+                            netlify-honeypot="bot-field"
+                            onSubmit={(e) => handleSubmit(e)}
+                        >
+                            <label style={{ display: 'none' }}>
+                                Don’t fill this out if you&apos;re human:{' '}
+                                <input name="bot-field" />
+                            </label>
+                            <FormInput>
+                                <label>
+                                    Name <br />
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        value={name}
+                                        onChange={(e) =>
+                                            nameChange(e.target.value)
+                                        }
+                                    />
+                                </label>
+                            </FormInput>
+                            <FormInput>
+                                <label>
+                                    Email <br />
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        value={email}
+                                        onChange={(e) =>
+                                            emailChange(e.target.value)
+                                        }
+                                    />
+                                </label>
+                            </FormInput>
+                            <FormInput>
+                                <label>
+                                    Message <br />
+                                    <textarea
+                                        cols={32}
+                                        rows={7}
+                                        name="message"
+                                        value={message}
+                                        onChange={(e) =>
+                                            messageChange(e.target.value)
+                                        }
+                                    />
+                                </label>
+                            </FormInput>
+                            <FormSubmit {...theme}>
+                                <button type="submit">Send</button>
+                            </FormSubmit>
+                        </form>
+                    </div>
+                ) : (
+                    'Thanks for filling in the form. I will contact you soon.'
+                )}
             </Box>
         </ExperienceWrap>
     );
