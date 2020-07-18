@@ -22,9 +22,10 @@ class MyApp extends App {
                 <form
                     name="contact"
                     data-netlify="true"
-                    netlify-honeypot="bot-field"
+                    data-netlify-honeypot="bot-field"
+                    hidden={true}
                 >
-                    <input type="text" name="name" />
+                    <input type="text" name="userName" />
                     <input type="email" name="email" />
                     <textarea name="message" />
                 </form>
