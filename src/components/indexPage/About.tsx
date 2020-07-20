@@ -23,17 +23,40 @@ const FlexColumn = styled.div`
 `;
 
 const Block1 = styled.div`
-    background: red;
-    height: 150px;
+    background: linear-gradient(
+            0deg,
+            rgba(${(props: BlockProps) => props.theme.primaryColorRGB}, 0.8),
+            rgba(${(props: BlockProps) => props.theme.primaryColorRGB}, 0.8)
+        ),
+        url('../static/indexPage/code.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 250px;
+    color: white;
+    font-size: 22px;
     position: relative;
+    text-align: left;
+    padding: 30px;
     top: ${(props: BlockProps) => (props.didMount ? '0px' : '-30px')};
     opacity: ${(props: BlockProps) => (props.didMount ? '1' : '0')};
     transition: opacity 0.5s, top 1s;
+
+    p {
+        font-size: 16px;
+        margin: 15px 0;
+    }
+
+    img {
+        height: 20px;
+        top: 4px;
+        position: relative;
+        filter: brightness(0) invert(1);
+    }
 `;
 
 const Block2 = styled.div`
     background: white;
-    height: 250px;
+    min-height: 150px;
     position: relative;
     left: ${(props: BlockProps) => (props.didMount ? '0px' : '-30px')};
     opacity: ${(props: BlockProps) => (props.didMount ? '1' : '0')};
@@ -42,7 +65,7 @@ const Block2 = styled.div`
 
 const Block3 = styled.div`
     background: blue;
-    height: 350px;
+    min-height: 350px;
     position: relative;
     right: ${(props: BlockProps) => (props.didMount ? '0px' : '-30px')};
     opacity: ${(props: BlockProps) => (props.didMount ? '1' : '0')};
@@ -51,7 +74,7 @@ const Block3 = styled.div`
 
 const Block4 = styled.div`
     background: yellow;
-    height: 50px;
+    min-height: 50px;
     position: relative;
     bottom: ${(props: BlockProps) => (props.didMount ? '0px' : '-30px')};
     opacity: ${(props: BlockProps) => (props.didMount ? '1' : '0')};
@@ -81,7 +104,30 @@ const About: React.FC = (): JSX.Element => {
     return (
         <FlexContainer>
             <FlexColumn>
-                <Block1 {...blockProps}>Mario Višnjić</Block1>
+                <Block1 {...blockProps}>
+                    Mario Višnjić
+                    <p>
+                        <img src="../static/icons/heart.png" alt="" />
+                        &nbsp;&nbsp;I like building small standalone apps
+                    </p>
+                    <p>
+                        <img src="../static/icons/pin.png" alt="" />
+                        &nbsp;Rijeka, Croatia
+                    </p>
+                    <p>
+                        <img src="../static/icons/briefcase.png" alt="" />
+                        &nbsp;3+ years of professional experience
+                    </p>
+                    <p>
+                        <img src="../static/icons/stack.png" alt="" />
+                        &nbsp;Preferred stack: React, Typescript, Node, MongoDB
+                    </p>
+                    <p>
+                        <img src="../static/icons/plus.png" alt="" />
+                        &nbsp;Can work with: Vue, PHP, Angular, Wordpress themes
+                        and plugins
+                    </p>
+                </Block1>
                 <Block2 {...blockProps}>Hobbies or something</Block2>
             </FlexColumn>
             <FlexColumn>

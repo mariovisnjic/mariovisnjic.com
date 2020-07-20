@@ -101,7 +101,6 @@ interface BoxProps {
 const Experience: NextPage<Props> = () => {
     const theme: ThemeContextType = useContext(ThemeContext);
     const [didMount, setDidMount] = useState(false);
-    const [formSubmitted, setFormSubmitted] = useState(false);
 
     useEffect(() => {
         setTimeout(() => setDidMount(true), 200);
@@ -112,7 +111,7 @@ const Experience: NextPage<Props> = () => {
             <Box {...{ background: '#1d1446', theme, didMount }}>
                 <a href="https://kompare.hr/">
                     <img
-                        src="../static/indexPage/kompare.png"
+                        src="../static/indexPage/company/kompare.png"
                         alt="kompare.hr"
                     />
                 </a>
@@ -153,55 +152,43 @@ const Experience: NextPage<Props> = () => {
                 </ImgWrap>
             </Box>
             <Box {...{ theme, didMount }}>
-                {!formSubmitted ? (
-                    <div>
-                        <p>Interested? Contact me.</p>
+                <div>
+                    <p>Interested? Contact me.</p>
 
-                        <form
-                            name="contact"
-                            method="post"
-                            data-netlify="true"
-                            encType="application/x-www-form-urlencoded"
-                        >
-                            <input
-                                type="hidden"
-                                name="form-name"
-                                value="contact"
-                            />
+                    <form
+                        name="contact"
+                        method="post"
+                        data-netlify="true"
+                        encType="application/x-www-form-urlencoded"
+                    >
+                        <input type="hidden" name="form-name" value="contact" />
 
-                            <FormInput>
-                                <label>
-                                    Name <br />
-                                    <input type="text" name="userName" />
-                                </label>
-                            </FormInput>
+                        <FormInput>
+                            <label>
+                                Name <br />
+                                <input type="text" name="userName" />
+                            </label>
+                        </FormInput>
 
-                            <FormInput>
-                                <label>
-                                    Email <br />
-                                    <input type="email" name="email" />
-                                </label>
-                            </FormInput>
+                        <FormInput>
+                            <label>
+                                Email <br />
+                                <input type="email" name="email" />
+                            </label>
+                        </FormInput>
 
-                            <FormInput>
-                                <label>
-                                    Message <br />
-                                    <textarea
-                                        cols={32}
-                                        rows={7}
-                                        name="message"
-                                    />
-                                </label>
-                            </FormInput>
+                        <FormInput>
+                            <label>
+                                Message <br />
+                                <textarea cols={32} rows={7} name="message" />
+                            </label>
+                        </FormInput>
 
-                            <FormSubmit {...theme}>
-                                <button type="submit">Send</button>
-                            </FormSubmit>
-                        </form>
-                    </div>
-                ) : (
-                    'Thanks for filling in the form. I will contact you soon.'
-                )}
+                        <FormSubmit {...theme}>
+                            <button type="submit">Send</button>
+                        </FormSubmit>
+                    </form>
+                </div>
             </Box>
         </ExperienceWrap>
     );

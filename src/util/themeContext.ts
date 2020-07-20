@@ -13,7 +13,7 @@ export interface ThemeContextType {
 export const ThemeContext = React.createContext({
     primaryColor: '#283d3b',
     primaryColorRGB: '40, 61, 59',
-    secondaryColor: '#197278',
+    secondaryColor: '#748E54',
     tertiaryColor: '#edddd4',
     quaternaryColor: '#c44536',
     quaternaryColorRGB: '196, 69, 54',
