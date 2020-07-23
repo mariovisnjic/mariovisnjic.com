@@ -120,7 +120,7 @@ const Home: NextPage<Props> = () => {
                     <br />
                     <a href="https://mariovisnjic.com">
                         <img
-                            src="../static/home.png"
+                            src="../static/common/home.png"
                             style={{ height: '30px' }}
                         />
                     </a>
@@ -130,7 +130,7 @@ const Home: NextPage<Props> = () => {
                         rel="noreferrer"
                     >
                         <img
-                            src="../static/GitHub-Logo.png"
+                            src="../static/common/GitHub-Logo.png"
                             style={{ height: '30px', marginLeft: '10px' }}
                         />
                     </a>
@@ -138,17 +138,17 @@ const Home: NextPage<Props> = () => {
 
                 {/*This will preload images and avoid twitchiness when toggling steps*/}
                 <HiddenPreload>
-                    <img src="../static/indexPage/school/ekonomski-rijeka.jpg" />
-                    <img src="../static/indexPage/school/gimnazija-karlovac.jpg" />
-                    <img src="../static/indexPage/techStack/react.png" />
-                    <img src="../static/indexPage/techStack/tsjs.png" />
-                    <img src="../static/indexPage/techStack/node.png" />
-                    <img src="../static/indexPage/techStack/next.png" />
-                    <img src="../static/indexPage/techStack/vue.png" />
-                    <img src="../static/indexPage/techStack/php.png" />
-                    <img src="../static/indexPage/techStack/graphql.png" />
-                    <img src="../static/indexPage/techStack/apollo.png" />
-                    <img src="../static/indexPage/kompare.png" />
+                    <img src="../static/pages/indexPage/school/ekonomski-rijeka.jpg" />
+                    <img src="../static/pages/indexPage/school/gimnazija-karlovac.jpg" />
+                    <img src="../static/pages/indexPage/techStack/react.png" />
+                    <img src="../static/pages/indexPage/techStack/tsjs.png" />
+                    <img src="../static/pages/indexPage/techStack/node.png" />
+                    <img src="../static/pages/indexPage/techStack/next.png" />
+                    <img src="../static/pages/indexPage/techStack/vue.png" />
+                    <img src="../static/pages/indexPage/techStack/php.png" />
+                    <img src="../static/pages/indexPage/techStack/graphql.png" />
+                    <img src="../static/pages/indexPage/techStack/apollo.png" />
+                    <img src="../static/pages/indexPage/kompare.png" />
                 </HiddenPreload>
             </MainWrap>
         </CenteredLayout>

@@ -12,6 +12,10 @@ const FlexContainer = styled.div`
     }
 `;
 
+const FlexColumnSingle = styled.div`
+    display: flex;
+`;
+
 const FlexColumn = styled.div`
     display: flex;
     flex-direction: column;
@@ -28,15 +32,19 @@ const Block1 = styled.div`
             rgba(${(props: BlockProps) => props.theme.primaryColorRGB}, 0.8),
             rgba(${(props: BlockProps) => props.theme.primaryColorRGB}, 0.8)
         ),
-        url('../static/indexPage/code.jpg');
+        url('../static/pages/indexPage/code.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 250px;
     color: white;
     font-size: 22px;
+    margin: 5px;
     position: relative;
     text-align: left;
     padding: 30px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
     top: ${(props: BlockProps) => (props.didMount ? '0px' : '-30px')};
     opacity: ${(props: BlockProps) => (props.didMount ? '1' : '0')};
     transition: opacity 0.5s, top 1s;
@@ -54,27 +62,58 @@ const Block1 = styled.div`
     }
 `;
 
-const Block2 = styled.div`
-    background: white;
+/*const Block2 = styled.div`
+    min-height: 250px;
+    font-size: 22px;
+    position: relative;
+    padding: 30px;
     min-height: 150px;
+    margin: 5px;
+
+    p {
+        font-size: 16px;
+        margin: 15px 0;
+    }
+
     position: relative;
     left: ${(props: BlockProps) => (props.didMount ? '0px' : '-30px')};
     opacity: ${(props: BlockProps) => (props.didMount ? '1' : '0')};
     transition: opacity 0.5s, left 1s;
-`;
+`;*/
 
 const Block3 = styled.div`
     background: blue;
     min-height: 350px;
     position: relative;
+    margin: 5px;
     right: ${(props: BlockProps) => (props.didMount ? '0px' : '-30px')};
     opacity: ${(props: BlockProps) => (props.didMount ? '1' : '0')};
     transition: opacity 0.5s, right 1s;
 `;
 
 const Block4 = styled.div`
-    background: yellow;
-    min-height: 50px;
+    background: linear-gradient(
+            0deg,
+            rgba(${(props: BlockProps) => props.theme.primaryColorRGB}, 0.8),
+            rgba(${(props: BlockProps) => props.theme.primaryColorRGB}, 0.8)
+        ),
+        url('../static/pages/indexPage/gaming.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin: 5px;
+    color: white;
+    font-size: 22px;
+    position: relative;
+    text-align: right;
+    padding: 30px;
+    min-height: 150px;
+
+    p {
+        font-size: 16px;
+        margin: 15px 0;
+    }
+
     position: relative;
     bottom: ${(props: BlockProps) => (props.didMount ? '0px' : '-30px')};
     opacity: ${(props: BlockProps) => (props.didMount ? '1' : '0')};
@@ -103,38 +142,57 @@ const About: React.FC = (): JSX.Element => {
 
     return (
         <FlexContainer>
-            <FlexColumn>
+            <FlexColumnSingle>
                 <Block1 {...blockProps}>
                     Mario Višnjić
                     <p>
-                        <img src="../static/icons/heart.png" alt="" />
+                        <img
+                            src="../static/pages/indexPage/icons/heart.png"
+                            alt=""
+                        />
                         &nbsp;&nbsp;I like building small standalone apps
                     </p>
                     <p>
-                        <img src="../static/icons/pin.png" alt="" />
+                        <img
+                            src="../static/pages/indexPage/icons/pin.png"
+                            alt=""
+                        />
                         &nbsp;Rijeka, Croatia
                     </p>
                     <p>
-                        <img src="../static/icons/briefcase.png" alt="" />
+                        <img
+                            src="../static/pages/indexPage/icons/briefcase.png"
+                            alt=""
+                        />
                         &nbsp;3+ years of professional experience
                     </p>
                     <p>
-                        <img src="../static/icons/stack.png" alt="" />
+                        <img
+                            src="../static/pages/indexPage/icons/stack.png"
+                            alt=""
+                        />
                         &nbsp;Preferred stack: React, Typescript, Node, MongoDB
                     </p>
                     <p>
-                        <img src="../static/icons/plus.png" alt="" />
-                        &nbsp;Can work with: Vue, PHP, Angular, Wordpress themes
-                        and plugins
+                        <img
+                            src="../static/pages/indexPage/icons/plus.png"
+                            alt=""
+                        />
+                        &nbsp;Can work with: Redux, Vue, PHP, Angular, Wordpress
+                        themes and plugins
                     </p>
                 </Block1>
-                <Block2 {...blockProps}>Hobbies or something</Block2>
-            </FlexColumn>
+            </FlexColumnSingle>
             <FlexColumn>
                 <Block3 {...blockProps}>
                     <GoogleMap location={location} zoomLevel={6} />
                 </Block3>
-                <Block4 {...blockProps}>Blah</Block4>
+                <Block4 {...blockProps}>
+                    Hobbies
+                    <p>Gaming</p>
+                    <p>Movies/Tv-shows/Esports</p>
+                    <p>Parenting</p>
+                </Block4>
             </FlexColumn>
         </FlexContainer>
     );

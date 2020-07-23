@@ -106,7 +106,7 @@ const Home: NextPage<Props> = () => {
                         <p>Create note on any page</p>
 
                         {isMobile && (
-                            <img src="../static/chromeNotesExtension/step1.png" />
+                            <img src="../static/pages/chromeNotesExtension/step1.png" />
                         )}
                     </StepPick>
 
@@ -121,7 +121,7 @@ const Home: NextPage<Props> = () => {
                         </p>
 
                         {isMobile && (
-                            <img src="../static/chromeNotesExtension/step2.png" />
+                            <img src="../static/pages/chromeNotesExtension/step2.png" />
                         )}
                     </StepPick>
 
@@ -133,7 +133,7 @@ const Home: NextPage<Props> = () => {
                         <p>Icon will be yellow for same domain</p>
 
                         {isMobile && (
-                            <img src="../static/chromeNotesExtension/step3.png" />
+                            <img src="../static/pages/chromeNotesExtension/step3.png" />
                         )}
                     </StepPick>
 
@@ -148,7 +148,7 @@ const Home: NextPage<Props> = () => {
                         </p>
 
                         {isMobile && (
-                            <img src="../static/chromeNotesExtension/step4.png" />
+                            <img src="../static/pages/chromeNotesExtension/step4.png" />
                         )}
                     </StepPick>
 
@@ -164,28 +164,28 @@ const Home: NextPage<Props> = () => {
 
                 <div>
                     {activeStep === 1 && !isMobile && (
-                        <img src="../static/chromeNotesExtension/step1.png" />
+                        <img src="../static/pages/chromeNotesExtension/step1.png" />
                     )}
 
                     {activeStep === 2 && !isMobile && (
-                        <img src="../static/chromeNotesExtension/step2.png" />
+                        <img src="../static/pages/chromeNotesExtension/step2.png" />
                     )}
 
                     {activeStep === 3 && !isMobile && (
-                        <img src="../static/chromeNotesExtension/step3.png" />
+                        <img src="../static/pages/chromeNotesExtension/step3.png" />
                     )}
 
                     {activeStep === 4 && !isMobile && (
-                        <img src="../static/chromeNotesExtension/step4.png" />
+                        <img src="../static/pages/chromeNotesExtension/step4.png" />
                     )}
                 </div>
 
                 {/*This will preload images and avoid twitchiness when toggling steps*/}
                 <HiddenPreload>
-                    <img src="../static/chromeNotesExtension/step1.png" />
-                    <img src="../static/chromeNotesExtension/step2.png" />
-                    <img src="../static/chromeNotesExtension/step3.png" />
-                    <img src="../static/chromeNotesExtension/step4.png" />
+                    <img src="../static/pages/chromeNotesExtension/step1.png" />
+                    <img src="../static/pages/chromeNotesExtension/step2.png" />
+                    <img src="../static/pages/chromeNotesExtension/step3.png" />
+                    <img src="../static/pages/chromeNotesExtension/step4.png" />
                 </HiddenPreload>
             </StepsWrapper>
 
@@ -196,7 +196,10 @@ const Home: NextPage<Props> = () => {
                 </div>
                 <br />
                 <a href="https://mariovisnjic.com">
-                    <img src="../static/home.png" style={{ height: '30px' }} />
+                    <img
+                        src="../static/common/home.png"
+                        style={{ height: '30px' }}
+                    />
                 </a>
                 <a
                     href="https://github.com/mariovisnjic/chromeNotesExtension"
@@ -204,7 +207,7 @@ const Home: NextPage<Props> = () => {
                     rel="noreferrer"
                 >
                     <img
-                        src="../static/GitHub-Logo.png"
+                        src="../static/common/GitHub-Logo.png"
                         style={{ height: '30px', marginLeft: '10px' }}
                     />
                 </a>

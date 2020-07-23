@@ -111,42 +111,42 @@ const Experience: NextPage<Props> = () => {
             <Box {...{ background: '#1d1446', theme, didMount }}>
                 <a href="https://kompare.hr/">
                     <img
-                        src="../static/indexPage/company/kompare.png"
+                        src="../static/pages/indexPage/company/kompare.png"
                         alt="kompare.hr"
                     />
                 </a>
                 2017 - present
                 <ImgWrap>
                     <img
-                        src="../static/indexPage/techStack/react.png"
+                        src="../static/pages/indexPage/techStack/react.png"
                         alt="react"
                     />
                     <img
-                        src="../static/indexPage/techStack/tsjs.png"
+                        src="../static/pages/indexPage/techStack/tsjs.png"
                         alt="tsjs"
                     />
                     <img
-                        src="../static/indexPage/techStack/node.png"
+                        src="../static/pages/indexPage/techStack/node.png"
                         alt="node"
                     />
                     <img
-                        src="../static/indexPage/techStack/next.png"
+                        src="../static/pages/indexPage/techStack/next.png"
                         alt="next"
                     />
                     <img
-                        src="../static/indexPage/techStack/vue.png"
+                        src="../static/pages/indexPage/techStack/vue.png"
                         alt="vue"
                     />
                     <img
-                        src="../static/indexPage/techStack/php.png"
+                        src="../static/pages/indexPage/techStack/php.png"
                         alt="php"
                     />
                     <img
-                        src="../static/indexPage/techStack/graphql.png"
+                        src="../static/pages/indexPage/techStack/graphql.png"
                         alt="graphql"
                     />
                     <img
-                        src="../static/indexPage/techStack/apollo.png"
+                        src="../static/pages/indexPage/techStack/apollo.png"
                         alt="apollo"
                     />
                 </ImgWrap>

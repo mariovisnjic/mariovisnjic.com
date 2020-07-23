@@ -64,7 +64,7 @@ const Education: NextPage<Props> = () => {
                 {...{
                     theme,
                     background:
-                        '../../../static/indexPage/school/gimnazija-karlovac.jpg',
+                        '../../../static/pages/indexPage/school/gimnazija-karlovac.jpg',
                     didMount
                 }}
             >
@@ -80,7 +80,7 @@ const Education: NextPage<Props> = () => {
                 {...{
                     theme,
                     background:
-                        '../../../static/indexPage/school/ekonomski-rijeka.jpg',
+                        '../../../static/pages/indexPage/school/ekonomski-rijeka.jpg',
                     didMount
                 }}
             >
