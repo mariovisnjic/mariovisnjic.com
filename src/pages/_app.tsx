@@ -1,5 +1,4 @@
 import App from 'next/app';
-import Head from 'next/head';
 import React from 'react';
 
 class MyApp extends App {
@@ -7,17 +6,6 @@ class MyApp extends App {
         const { pageProps, Component } = this.props;
         return (
             <>
-                <Head>
-                    <title>Mario Višnjić</title>
-                    <link
-                        href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap"
-                        rel="stylesheet"
-                    />
-                    <link
-                        href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap"
-                        rel="stylesheet"
-                    />
-                </Head>
                 {/*static form needed for netlify*/}
                 <form
                     name="contact"
