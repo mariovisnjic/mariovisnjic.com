@@ -120,6 +120,7 @@ const Home: NextPage<Props> = () => {
                     <a href="https://mariovisnjic.com">
                         <img
                             src="../static/common/home.png"
+                            alt="homeIcon"
                             style={{ height: '30px' }}
                         />
                     </a>
@@ -130,6 +131,7 @@ const Home: NextPage<Props> = () => {
                     >
                         <img
                             src="../static/common/GitHub-Logo.png"
+                            alt="gitHubLogo"
                             style={{ height: '30px', marginLeft: '10px' }}
                         />
                     </a>
@@ -137,17 +139,50 @@ const Home: NextPage<Props> = () => {
 
                 {/*This will preload images and avoid twitchiness when toggling steps*/}
                 <HiddenPreload>
-                    <img src="../static/pages/indexPage/school/ekonomski-rijeka.jpg" />
-                    <img src="../static/pages/indexPage/school/gimnazija-karlovac.jpg" />
-                    <img src="../static/pages/indexPage/techStack/react.png" />
-                    <img src="../static/pages/indexPage/techStack/tsjs.png" />
-                    <img src="../static/pages/indexPage/techStack/node.png" />
-                    <img src="../static/pages/indexPage/techStack/next.png" />
-                    <img src="../static/pages/indexPage/techStack/vue.png" />
-                    <img src="../static/pages/indexPage/techStack/php.png" />
-                    <img src="../static/pages/indexPage/techStack/graphql.png" />
-                    <img src="../static/pages/indexPage/techStack/apollo.png" />
-                    <img src="../static/pages/indexPage/kompare.png" />
+                    <img
+                        src="../static/pages/indexPage/school/ekonomski-rijeka.jpg"
+                        alt="preloadSchool1"
+                    />
+                    <img
+                        src="../static/pages/indexPage/school/gimnazija-karlovac.jpg"
+                        alt="preloadSchool2"
+                    />
+                    <img
+                        src="../static/pages/indexPage/techStack/react.png"
+                        alt="preloadIcon1"
+                    />
+                    <img
+                        src="../static/pages/indexPage/techStack/tsjs.png"
+                        alt="preloadIcon2"
+                    />
+                    <img
+                        src="../static/pages/indexPage/techStack/node.png"
+                        alt="preloadIcon3"
+                    />
+                    <img
+                        src="../static/pages/indexPage/techStack/next.png"
+                        alt="preloadIcon4"
+                    />
+                    <img
+                        src="../static/pages/indexPage/techStack/vue.png"
+                        alt="preloadIcon5"
+                    />
+                    <img
+                        src="../static/pages/indexPage/techStack/php.png"
+                        alt="preloadIcon6"
+                    />
+                    <img
+                        src="../static/pages/indexPage/techStack/graphql.png"
+                        alt="preloadIcon7"
+                    />
+                    <img
+                        src="../static/pages/indexPage/techStack/apollo.png"
+                        alt="preloadIcon8"
+                    />
+                    <img
+                        src="../static/pages/indexPage/company/kompare.png"
+                        alt="preloadLogo1"
+                    />
                 </HiddenPreload>
             </MainWrap>
         </CenteredLayout>

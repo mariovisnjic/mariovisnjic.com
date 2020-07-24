@@ -106,7 +106,10 @@ const Home: NextPage<Props> = () => {
                         <p>Create note on any page</p>
 
                         {isMobile && (
-                            <img src="../static/pages/chromeNotesExtension/step1.png" />
+                            <img
+                                src="../static/pages/chromeNotesExtension/step1.png"
+                                alt="step1"
+                            />
                         )}
                     </StepPick>
 
@@ -121,7 +124,10 @@ const Home: NextPage<Props> = () => {
                         </p>
 
                         {isMobile && (
-                            <img src="../static/pages/chromeNotesExtension/step2.png" />
+                            <img
+                                src="../static/pages/chromeNotesExtension/step2.png"
+                                alt="step2"
+                            />
                         )}
                     </StepPick>
 
@@ -133,7 +139,10 @@ const Home: NextPage<Props> = () => {
                         <p>Icon will be yellow for the same domain</p>
 
                         {isMobile && (
-                            <img src="../static/pages/chromeNotesExtension/step3.png" />
+                            <img
+                                src="../static/pages/chromeNotesExtension/step3.png"
+                                alt="step3"
+                            />
                         )}
                     </StepPick>
 
@@ -148,7 +157,10 @@ const Home: NextPage<Props> = () => {
                         </p>
 
                         {isMobile && (
-                            <img src="../static/pages/chromeNotesExtension/step4.png" />
+                            <img
+                                src="../static/pages/chromeNotesExtension/step4.png"
+                                alt="step4"
+                            />
                         )}
                     </StepPick>
 
@@ -164,28 +176,52 @@ const Home: NextPage<Props> = () => {
 
                 <div>
                     {activeStep === 1 && !isMobile && (
-                        <img src="../static/pages/chromeNotesExtension/step1.png" />
+                        <img
+                            src="../static/pages/chromeNotesExtension/step1.png"
+                            alt="step1"
+                        />
                     )}
 
                     {activeStep === 2 && !isMobile && (
-                        <img src="../static/pages/chromeNotesExtension/step2.png" />
+                        <img
+                            src="../static/pages/chromeNotesExtension/step2.png"
+                            alt="step2"
+                        />
                     )}
 
                     {activeStep === 3 && !isMobile && (
-                        <img src="../static/pages/chromeNotesExtension/step3.png" />
+                        <img
+                            src="../static/pages/chromeNotesExtension/step3.png"
+                            alt="step3"
+                        />
                     )}
 
                     {activeStep === 4 && !isMobile && (
-                        <img src="../static/pages/chromeNotesExtension/step4.png" />
+                        <img
+                            src="../static/pages/chromeNotesExtension/step4.png"
+                            alt="step4"
+                        />
                     )}
                 </div>
 
                 {/*This will preload images and avoid twitchiness when toggling steps*/}
                 <HiddenPreload>
-                    <img src="../static/pages/chromeNotesExtension/step1.png" />
-                    <img src="../static/pages/chromeNotesExtension/step2.png" />
-                    <img src="../static/pages/chromeNotesExtension/step3.png" />
-                    <img src="../static/pages/chromeNotesExtension/step4.png" />
+                    <img
+                        src="../static/pages/chromeNotesExtension/step1.png"
+                        alt="step1"
+                    />
+                    <img
+                        src="../static/pages/chromeNotesExtension/step2.png"
+                        alt="step2"
+                    />
+                    <img
+                        src="../static/pages/chromeNotesExtension/step3.png"
+                        alt="step3"
+                    />
+                    <img
+                        src="../static/pages/chromeNotesExtension/step4.png"
+                        alt="step4"
+                    />
                 </HiddenPreload>
             </StepsWrapper>
 
@@ -198,6 +234,7 @@ const Home: NextPage<Props> = () => {
                 <a href="https://mariovisnjic.com">
                     <img
                         src="../static/common/home.png"
+                        alt="homeIcon"
                         style={{ height: '30px' }}
                     />
                 </a>
@@ -208,6 +245,7 @@ const Home: NextPage<Props> = () => {
                 >
                     <img
                         src="../static/common/GitHub-Logo.png"
+                        alt="gitHubLogo"
                         style={{ height: '30px', marginLeft: '10px' }}
                     />
                 </a>

@@ -148,35 +148,35 @@ const About: React.FC = (): JSX.Element => {
                     <p>
                         <img
                             src="../static/pages/indexPage/icons/heart.png"
-                            alt=""
+                            alt="heartIcon"
                         />
                         &nbsp;&nbsp;I like building small standalone apps
                     </p>
                     <p>
                         <img
                             src="../static/pages/indexPage/icons/pin.png"
-                            alt=""
+                            alt="pinIcon"
                         />
                         &nbsp;Rijeka, Croatia
                     </p>
                     <p>
                         <img
                             src="../static/pages/indexPage/icons/briefcase.png"
-                            alt=""
+                            alt="breafCaseIcon"
                         />
                         &nbsp;3+ years of professional experience
                     </p>
                     <p>
                         <img
                             src="../static/pages/indexPage/icons/stack.png"
-                            alt=""
+                            alt="stackIcon"
                         />
                         &nbsp;Preferred stack: React, Typescript, Node, MongoDB
                     </p>
                     <p>
                         <img
                             src="../static/pages/indexPage/icons/plus.png"
-                            alt=""
+                            alt="plusIcon"
                         />
                         &nbsp;Can work with: Redux, Vue, PHP, Angular, Wordpress
                         themes and plugins
