@@ -10,11 +10,11 @@ import React from 'react';
 
 type Props = unknown;
 
-class Document extends NextDocument<Props> {
+class MyDocument extends NextDocument<Props> {
     static async getInitialProps(
         ctx: DocumentContext
     ): Promise<DocumentInitialProps> {
-        const initialProps = await Document.getInitialProps(ctx);
+        const initialProps = await NextDocument.getInitialProps(ctx);
         return { ...initialProps };
     }
 
@@ -46,4 +46,4 @@ class Document extends NextDocument<Props> {
     }
 }
 
-export default Document;
+export default MyDocument;
