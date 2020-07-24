@@ -23,7 +23,6 @@ const Box = styled.div`
     background: ${(props: BoxProps) =>
         props.background ? props.background : props.theme.quinaryColor};
     margin-bottom: 30px;
-    border-radius: 10px;
     align-items: center;
     justify-content: center;
     color: white;
@@ -71,7 +70,6 @@ const FormSubmit = styled.div`
         height: 30px;
         width: 100px;
         font-size: 16px;
-        border-radius: 4px;
         background: ${(props: ThemeContextType) => props.primaryColor};
     }
 `;

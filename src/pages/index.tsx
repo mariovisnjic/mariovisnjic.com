@@ -45,7 +45,6 @@ const Toggler = styled.div`
     top: -5px;
     left: -5px;
     margin-bottom: 10px;
-    border-radius: 4px;
 
     &:active {
         top: 0;

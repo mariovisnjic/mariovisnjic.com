@@ -24,7 +24,6 @@ const School = styled.div`
     background-repeat: no-repeat;
     background-position: center;
     margin-bottom: 30px;
-    border-radius: 10px;
     flex-direction: column;
     align-items: center;
     transition: transform 0.5s;
