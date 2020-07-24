@@ -21,7 +21,7 @@ interface PinProps {
 
 const GoogleMapPin: React.FC<PinProps> = ({ text }: PinProps): JSX.Element => (
     <Pin>
-        <img src="../static/common/pin.png" alt={text} />
+        <img src="../static/common/pin.png" alt={text || 'pin'} />
     </Pin>
 );
 
