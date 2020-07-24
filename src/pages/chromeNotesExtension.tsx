@@ -130,7 +130,7 @@ const Home: NextPage<Props> = () => {
                         onMouseEnter={() => setActiveStep(3)}
                     >
                         <span>3</span>
-                        <p>Icon will be yellow for same domain</p>
+                        <p>Icon will be yellow for the same domain</p>
 
                         {isMobile && (
                             <img src="../static/pages/chromeNotesExtension/step3.png" />
@@ -144,7 +144,7 @@ const Home: NextPage<Props> = () => {
                         <span>4</span>
                         <p>
                             Red icon and additional highlighting is present if
-                            note is on exact url
+                            the note is on the exact url
                         </p>
 
                         {isMobile && (
