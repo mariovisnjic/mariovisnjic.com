@@ -27,7 +27,6 @@ class MyDocument extends NextDocument<Props> {
                         name="viewport"
                         content="width=device-width, initial-scale=1, shrink-to-fit=no"
                     />
-                    <title>Mario Višnjić</title>
                     <link
                         href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap"
                         rel="stylesheet"

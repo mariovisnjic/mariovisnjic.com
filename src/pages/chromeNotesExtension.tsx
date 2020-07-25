@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { NextPage } from 'next';
+import Head from 'next/head';
 import React, { useContext, useEffect, useState } from 'react';
 
 import Layout from '../components/Layout';
@@ -72,6 +73,9 @@ interface StepPickProps {
 
 const Home: NextPage<Props> = () => {
     const [activeStep, setActiveStep] = useState(1);
+    const [activeImage, setActiveImage] = useState(
+        '../static/pages/chromeNotesExtension/step1.png'
+    );
     const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
@@ -79,6 +83,13 @@ const Home: NextPage<Props> = () => {
     }, []);
 
     const theme: ThemeContextType = useContext(ThemeContext);
+
+    const changeStep = (stepNumber) => {
+        setActiveStep(stepNumber);
+        setActiveImage(
+            `../static/pages/chromeNotesExtension/step${stepNumber}.png`
+        );
+    };
 
     const stepPickProps = (stepNumber) => {
         return {
@@ -90,6 +101,9 @@ const Home: NextPage<Props> = () => {
 
     return (
         <Layout>
+            <Head>
+                <title>Mario Višnjić | Chrome notes extension</title>
+            </Head>
             <TitleSection
                 mainTitle="CHROME NOTES EXTENSION"
                 backgroundImage="../static/chromeNotesExtension/title.png"
@@ -100,7 +114,7 @@ const Home: NextPage<Props> = () => {
                 <div>
                     <StepPick
                         {...stepPickProps(1)}
-                        onMouseEnter={() => setActiveStep(1)}
+                        onMouseEnter={() => changeStep(1)}
                     >
                         <span>1</span>
                         <p>Create note on any page</p>
@@ -115,7 +129,7 @@ const Home: NextPage<Props> = () => {
 
                     <StepPick
                         {...stepPickProps(2)}
-                        onMouseEnter={() => setActiveStep(2)}
+                        onMouseEnter={() => changeStep(2)}
                     >
                         <span>2</span>
                         <p>
@@ -133,7 +147,7 @@ const Home: NextPage<Props> = () => {
 
                     <StepPick
                         {...stepPickProps(3)}
-                        onMouseEnter={() => setActiveStep(3)}
+                        onMouseEnter={() => changeStep(3)}
                     >
                         <span>3</span>
                         <p>Icon will be yellow for the same domain</p>
@@ -148,7 +162,7 @@ const Home: NextPage<Props> = () => {
 
                     <StepPick
                         {...stepPickProps(4)}
-                        onMouseEnter={() => setActiveStep(4)}
+                        onMouseEnter={() => changeStep(4)}
                     >
                         <span>4</span>
                         <p>
@@ -174,42 +188,10 @@ const Home: NextPage<Props> = () => {
                     </StepPick>
                 </div>
 
-                <div>
-                    {activeStep === 1 && !isMobile && (
-                        <img
-                            src="../static/pages/chromeNotesExtension/step1.png"
-                            alt="step1"
-                        />
-                    )}
-
-                    {activeStep === 2 && !isMobile && (
-                        <img
-                            src="../static/pages/chromeNotesExtension/step2.png"
-                            alt="step2"
-                        />
-                    )}
-
-                    {activeStep === 3 && !isMobile && (
-                        <img
-                            src="../static/pages/chromeNotesExtension/step3.png"
-                            alt="step3"
-                        />
-                    )}
-
-                    {activeStep === 4 && !isMobile && (
-                        <img
-                            src="../static/pages/chromeNotesExtension/step4.png"
-                            alt="step4"
-                        />
-                    )}
-                </div>
+                <div>{!isMobile && <img src={activeImage} alt="step1" />}</div>
 
                 {/*This will preload images and avoid twitchiness when toggling steps*/}
                 <HiddenPreload>
-                    <img
-                        src="../static/pages/chromeNotesExtension/step1.png"
-                        alt="step1"
-                    />
                     <img
                         src="../static/pages/chromeNotesExtension/step2.png"
                         alt="step2"

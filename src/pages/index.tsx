@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { NextPage } from 'next';
+import Head from 'next/head';
 import React, { useContext, useState } from 'react';
 
 import CenteredLayout from '../components/CenteredLayout';
@@ -91,6 +92,9 @@ const Home: NextPage<Props> = () => {
 
     return (
         <CenteredLayout>
+            <Head>
+                <title>Mario Višnjić</title>
+            </Head>
             <MainWrap>
                 <TogglerWrapper {...theme}>
                     {sectionsNames.map((section, i) => (
