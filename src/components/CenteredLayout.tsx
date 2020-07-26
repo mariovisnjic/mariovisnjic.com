@@ -61,7 +61,7 @@ const CenteredLayout: React.FC = (props: Props): JSX.Element => {
     return (
         <LayoutWrapper {...theme}>
             <Header {...theme}>
-                <a href="https://mariovisnjic.com">mariovisnjic.com</a>
+                <a href="/">mariovisnjic.com</a>
             </Header>
 
             <Content {...theme}>{props.children}</Content>

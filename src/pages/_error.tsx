@@ -16,6 +16,7 @@ const Error: NextPage<Props> = (props: Props) => {
                 <title>Mario Višnjić | Error</title>
             </Head>
 
+            {props.errorCode}
             {props.errorCode === 404 ? (
                 <p>
                     Page not found. Return to{' '}
