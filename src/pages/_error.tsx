@@ -6,25 +6,20 @@ import CenteredLayout from '../components/CenteredLayout';
 import PageInfoWidget from '../components/PageInfoWidget';
 
 interface Props {
-    errorCode: number;
+    errorCode?: number;
 }
 
-const Error: NextPage<Props> = (props: Props) => {
+const Error: NextPage<Props> = () => {
     return (
         <CenteredLayout>
             <Head>
                 <title>Mario Višnjić | Error</title>
             </Head>
 
-            {props.errorCode}
-            {props.errorCode === 400 || props.errorCode === 404 ? (
-                <p>
-                    Page not found. Return to{' '}
-                    <a href="/">home page</a>
-                </p>
-            ) : (
-                <p>Some error has occured</p>
-            )}
+            <p>
+                Some error has occured. Page probably does not exist. Return to
+                <a href="/">home page</a>
+            </p>
 
             <PageInfoWidget position="top">
                 <div>
@@ -32,7 +27,7 @@ const Error: NextPage<Props> = (props: Props) => {
                     for controlling tabs, reading URLs and saving notes to user.
                 </div>
                 <br />
-                <a href="https://mariovisnjic.com">
+                <a href="/">
                     <img
                         src="../static/common/home.png"
                         alt="homeIcon"
@@ -53,15 +48,6 @@ const Error: NextPage<Props> = (props: Props) => {
             </PageInfoWidget>
         </CenteredLayout>
     );
-};
-
-Error.getInitialProps = (context: NextPageContext): Props => {
-    const errorCode = context.res
-        ? context.res.statusCode
-        : context.xhr
-        ? context.xhr.status
-        : null;
-    return { errorCode };
 };
 
 export default Error;

@@ -18,7 +18,7 @@ const Projects: NextPage = () => {
     return (
         <ProjectsWrapper>
             <ul>
-                <a href="https://mariovisnjic.com/chrome-notes-extension">
+                <a href="/chrome-notes-extension">
                     <li>Chrome notes extension</li>
                 </a>
             </ul>

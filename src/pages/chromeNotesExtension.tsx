@@ -213,7 +213,7 @@ const Home: NextPage<Props> = () => {
                     for controlling tabs, reading URLs and saving notes to user.
                 </div>
                 <br />
-                <a href="https://mariovisnjic.com">
+                <a href="/">
                     <img
                         src="../static/common/home.png"
                         alt="homeIcon"

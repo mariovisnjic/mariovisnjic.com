@@ -121,7 +121,7 @@ const Home: NextPage<Props> = () => {
                         Hosted on Netlify
                     </div>
                     <br />
-                    <a href="https://mariovisnjic.com">
+                    <a href="/">
                         <img
                             src="../static/common/home.png"
                             alt="homeIcon"
