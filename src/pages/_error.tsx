@@ -17,7 +17,7 @@ const Error: NextPage<Props> = (props: Props) => {
             </Head>
 
             {props.errorCode}
-            {props.errorCode === 404 ? (
+            {props.errorCode === 400 || props.errorCode === 404 ? (
                 <p>
                     Page not found. Return to{' '}
                     <a href="/">home page</a>

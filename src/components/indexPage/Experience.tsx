@@ -4,7 +4,7 @@ import React, { useContext, useEffect, useState } from 'react';
 
 import { ThemeContext, ThemeContextType } from '../../util/themeContext';
 
-const ExperienceWrap = styled.div`
+const ExperienceWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -74,7 +74,7 @@ const FormSubmit = styled.div`
     }
 `;
 
-const ImgWrap = styled.div`
+const ImgWrapper = styled.div`
     background: rgba(255, 255, 255, 0.3);
     padding: 10px 0;
     margin: 10px 0;
@@ -105,7 +105,7 @@ const Experience: NextPage<Props> = () => {
     }, []);
 
     return (
-        <ExperienceWrap>
+        <ExperienceWrapper>
             <Box {...{ background: '#1d1446', theme, didMount }}>
                 <a href="https://kompare.hr/">
                     <img
@@ -114,7 +114,7 @@ const Experience: NextPage<Props> = () => {
                     />
                 </a>
                 2017 - present
-                <ImgWrap>
+                <ImgWrapper>
                     <img
                         src="../static/pages/indexPage/techStack/react.png"
                         alt="react"
@@ -147,7 +147,7 @@ const Experience: NextPage<Props> = () => {
                         src="../static/pages/indexPage/techStack/apollo.png"
                         alt="apollo"
                     />
-                </ImgWrap>
+                </ImgWrapper>
             </Box>
             <Box {...{ theme, didMount }}>
                 <div>
@@ -188,7 +188,7 @@ const Experience: NextPage<Props> = () => {
                     </form>
                 </div>
             </Box>
-        </ExperienceWrap>
+        </ExperienceWrapper>
     );
 };
 

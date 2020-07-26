@@ -11,7 +11,7 @@ import Projects from '../components/indexPage/Projects';
 import PageInfoWidget from '../components/PageInfoWidget';
 import { ThemeContext, ThemeContextType } from '../util/themeContext';
 
-const MainWrap = styled.div`
+const MainWrapper = styled.div`
     display: flex;
     min-width: 640px;
     align-items: center;
@@ -95,7 +95,7 @@ const Home: NextPage<Props> = () => {
             <Head>
                 <title>Mario Višnjić</title>
             </Head>
-            <MainWrap>
+            <MainWrapper>
                 <TogglerWrapper {...theme}>
                     {sectionsNames.map((section, i) => (
                         <Toggler
@@ -188,7 +188,7 @@ const Home: NextPage<Props> = () => {
                         alt="preloadLogo1"
                     />
                 </HiddenPreload>
-            </MainWrap>
+            </MainWrapper>
         </CenteredLayout>
     );
 };
