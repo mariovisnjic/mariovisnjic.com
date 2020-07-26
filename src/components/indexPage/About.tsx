@@ -178,8 +178,8 @@ const About: React.FC = (): JSX.Element => {
                             src="../static/pages/indexPage/icons/plus.png"
                             alt="plusIcon"
                         />
-                        &nbsp;Can work with: Redux, Vue, PHP, Angular, Wordpress
-                        themes and plugins
+                        &nbsp;Can work with: Redux, Vue, PHP, Angular, Chrome
+                        extensions, Wordpress themes and plugins
                     </p>
                 </Block1>
             </FlexColumnSingle>
