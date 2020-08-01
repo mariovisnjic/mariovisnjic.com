@@ -1,7 +1,8 @@
 import styled from '@emotion/styled';
+import axios from 'axios';
 import GoogleMapReact from 'google-map-react';
 import getConfig from 'next/config';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import GoogleMapPin from './GoogleMapPin';
 
@@ -37,17 +38,32 @@ const GoogleMap: React.FC<GoogleMapProps> = ({
     location,
     zoomLevel
 }: GoogleMapProps): JSX.Element => {
+    const [key, setKey] = useState('');
+    useEffect(() => {
+        async function fetchApiKey() {
+            axios
+                .get(
+                    publicRuntimeConfig.API_URL +
+                        '/.netlify/functions/api/google-map-api-key'
+                )
+                .then((response) => setKey(response.data));
+        }
+        fetchApiKey();
+    }, []);
+
     return (
         <Map>
-            <GoogleMapReact
-                bootstrapURLKeys={{
-                    key: publicRuntimeConfig.GOOGLE_MAPS_API_KEY
-                }}
-                defaultCenter={location}
-                defaultZoom={zoomLevel}
-            >
-                <GoogleMapPin lng={location.lng} lat={location.lat} />
-            </GoogleMapReact>
+            {key ? (
+                <GoogleMapReact
+                    bootstrapURLKeys={{ key }}
+                    defaultCenter={location}
+                    defaultZoom={zoomLevel}
+                >
+                    <GoogleMapPin lng={location.lng} lat={location.lat} />
+                </GoogleMapReact>
+            ) : (
+                'Map is not fetched properly'
+            )}
         </Map>
     );
 };

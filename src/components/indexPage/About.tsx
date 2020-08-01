@@ -82,7 +82,6 @@ const Block1 = styled.div`
 `;*/
 
 const Block3 = styled.div`
-    background: blue;
     min-height: 350px;
     position: relative;
     margin: 5px;
