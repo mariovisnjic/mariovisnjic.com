@@ -14,10 +14,10 @@ module.exports = withFonts(
         publicRuntimeConfig: {
             staticFolder: '/public',
             APP_URL: process.env.APP_URL,
+            API_URL: process.env.API_URL,
             MONGO_USER: process.env.MONGO_USER,
             MONGO_PASSWORD: process.env.MONGO_PASSWORD,
             MONGO_DATABASE_NAME: process.env.MONGO_DATABASE_NAME,
-            GOOGLE_MAPS_API_KEY: process.env.GOOGLE_MAPS_API_KEY,
             isProduction: process.env.NODE_ENV === 'production'
         },
 
