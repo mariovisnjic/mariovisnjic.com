@@ -1,8 +1,12 @@
 import styled from '@emotion/styled';
+import axios from 'axios';
+import getConfig from 'next/config';
 import React, { useContext, useEffect, useState } from 'react';
 
 import { ThemeContext, ThemeContextType } from '../../util/themeContext';
 import GoogleMap from '../GoogleMap';
+
+const { publicRuntimeConfig } = getConfig();
 
 const FlexContainer = styled.div`
     display: flex;
@@ -126,10 +130,17 @@ interface BlockProps {
 
 const About: React.FC = (): JSX.Element => {
     const [didMount, setDidMount] = useState(false);
+    const [googleMapsKey, setKey] = useState('');
     const theme: ThemeContextType = useContext(ThemeContext);
     const blockProps = { didMount, theme };
 
     useEffect(() => {
+        async function fetchApiKey() {
+            axios
+                .get(publicRuntimeConfig.API_URL + '/google-map-api-key')
+                .then((response) => setKey(response.data));
+        }
+        fetchApiKey();
         setTimeout(() => setDidMount(true), 200);
     }, []);
 
@@ -184,7 +195,13 @@ const About: React.FC = (): JSX.Element => {
             </FlexColumnSingle>
             <FlexColumn>
                 <Block3 {...blockProps}>
-                    <GoogleMap location={location} zoomLevel={6} />
+                    {googleMapsKey && (
+                        <GoogleMap
+                            location={location}
+                            zoomLevel={6}
+                            googleMapsKey={googleMapsKey}
+                        />
+                    )}
                 </Block3>
                 <Block4 {...blockProps}>
                     Hobbies
