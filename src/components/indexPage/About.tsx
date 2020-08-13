@@ -207,6 +207,7 @@ const About: React.FC = (): JSX.Element => {
                     Hobbies
                     <p>Gaming</p>
                     <p>Movies/Tv-shows/Esports</p>
+                    <p>Formula 1</p>
                     <p>Parenting</p>
                 </Block4>
             </FlexColumn>
