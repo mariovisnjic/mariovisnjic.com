@@ -25,6 +25,7 @@ module.exports = withFonts(
             return {
                 "/": { page: "/" },
                 "/chrome-notes-extension": { page: "/chromeNotesExtension" },
+                "/mood": { page: "/mood" },
             }
         },
 

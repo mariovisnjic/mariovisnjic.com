@@ -20,6 +20,7 @@
 		"emotion-theming": "10.0.27",
 		"google-map-react": "^1.1.7",
 		"isomorphic-unfetch": "^3.0.0",
+		"netlify-identity-widget": "^1.9.1",
 		"next": "9.4.4",
 		"next-connect": "0.8.1",
 		"next-fonts": "1.4.0",
