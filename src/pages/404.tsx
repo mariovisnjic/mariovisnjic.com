@@ -8,7 +8,7 @@ interface Props {
     errorCode?: number;
 }
 
-const Error: NextPage<Props> = () => {
+const Page404: NextPage<Props> = () => {
     return (
         <CenteredLayout>
             <Head>
@@ -16,11 +16,11 @@ const Error: NextPage<Props> = () => {
             </Head>
 
             <p>
-                Some error has occured. Page probably does not exist. Return to
+                404 page not found
                 <a href="/">home page</a>
             </p>
         </CenteredLayout>
     );
 };
 
-export default Error;
+export default Page404;

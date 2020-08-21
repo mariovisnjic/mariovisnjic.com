@@ -1,4 +1,5 @@
 import App from 'next/app';
+import Head from 'next/head';
 import React from 'react';
 
 class MyApp extends App {
@@ -6,6 +7,18 @@ class MyApp extends App {
         const { pageProps, Component } = this.props;
         return (
             <>
+                <Head>
+                    <title>Mario Višnjić</title>
+                    <meta charSet="UTF-8" />
+                    <meta
+                        name="viewport"
+                        content="width=device-width, initial-scale=1, shrink-to-fit=no"
+                    />
+                    <link
+                        href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap"
+                        rel="stylesheet"
+                    />
+                </Head>
                 {/*static form needed for netlify*/}
                 <form
                     name="contact"

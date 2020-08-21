@@ -22,19 +22,11 @@ class MyDocument extends NextDocument<Props> {
         return (
             <Html lang="en">
                 <Head>
-                    <meta charSet="UTF-8" />
-                    <meta
-                        name="viewport"
-                        content="width=device-width, initial-scale=1, shrink-to-fit=no"
-                    />
-                    <link
-                        href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap"
-                        rel="stylesheet"
-                    />
                     <link
                         href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap"
                         rel="stylesheet"
                     />
+                    <title>Mario Višnjić</title>
                 </Head>
                 <body>
                     <Main />

@@ -8,7 +8,6 @@ import Layout from '../components/Layout';
 import PageInfoWidget from '../components/PageInfoWidget';
 import TitleSection from '../components/TitleSection';
 import netlifyAuth from '../netlifyAuth.js';
-import { ThemeContext, ThemeContextType } from '../util/themeContext';
 const { publicRuntimeConfig } = getConfig();
 
 interface Props {
@@ -83,7 +82,7 @@ const Mood: NextPage<Props> = () => {
                 backgroundPosition="top right"
             />
 
-            {moodAverage && moodAverage.success && (
+            {moodAverage?.success && (
                 <div>
                     <p>physical: {moodAverage.data.physical}</p>
                     <p>emotional: {moodAverage.data.emotional}</p>
