@@ -15,28 +15,37 @@ interface Props {
     fakeProp: string;
 }
 
+interface MoodResponse {
+    success: boolean;
+    data: {
+        physical: number;
+        emotional: number;
+        focus: number;
+    };
+}
+
 const Mood: NextPage<Props> = () => {
-    const [lastMood, setLastMood] = useState();
+    const [moodAverage, setMoodAverage] = useState<MoodResponse | undefined>();
     const [physical, setPhysical] = useState(0);
     const [emotional, setEmotional] = useState(0);
     const [focus, setFocus] = useState(0);
 
     const [password, setPassword] = useState('');
     const [saveMoodResponse, setSaveMoodResponse] = useState();
-    const [loggedIn, setLoggedIn] = useState(netlifyAuth.isAuthenticated)
-    const [user, setUser] = useState(null)
+    const [loggedIn, setLoggedIn] = useState(netlifyAuth.isAuthenticated);
+    const [user, setUser] = useState(null);
 
     useEffect(() => {
         netlifyAuth.initialize((user) => {
-            setLoggedIn(!!user)
-        })
-    }, [loggedIn])
+            setLoggedIn(!!user);
+        });
+    }, [loggedIn]);
 
     useEffect(() => {
         async function fetchApiKey() {
             axios
                 .get(publicRuntimeConfig.API_URL + '/mood')
-                .then((response) => setLastMood(response.data));
+                .then((response) => setMoodAverage(response.data));
         }
         fetchApiKey();
     }, []);
@@ -57,11 +66,11 @@ const Mood: NextPage<Props> = () => {
 
     const login = () => {
         netlifyAuth.authenticate((user) => {
-            setLoggedIn(!!user)
-            setUser(user)
-            netlifyAuth.closeModal()
-        })
-    }
+            setLoggedIn(!!user);
+            setUser(user);
+            netlifyAuth.closeModal();
+        });
+    };
 
     return (
         <Layout>
@@ -74,32 +83,40 @@ const Mood: NextPage<Props> = () => {
                 backgroundPosition="top right"
             />
 
-            <div>{JSON.stringify(lastMood)}</div>
-
-            <div>
-                phy:{' '}
-                <input onChange={(e) => setPhysical(Number(e.target.value))} />
-                em:{' '}
-                <input onChange={(e) => setEmotional(Number(e.target.value))} />
-                foc:{' '}
-                <input onChange={(e) => setFocus(Number(e.target.value))} />
-                pass: <input onChange={(e) => setPassword(e.target.value)} />
-                <button onClick={() => saveMood()}>Spremi</button>
-                {JSON.stringify(saveMoodResponse)}
-            </div>
+            {moodAverage && moodAverage.success && (
+                <div>
+                    <p>physical: {moodAverage.data.physical}</p>
+                    <p>emotional: {moodAverage.data.emotional}</p>
+                    <p>focus: {moodAverage.data.focus}</p>
+                </div>
+            )}
 
             {loggedIn ? (
                 <div>
-                    You are logged in!
+                    phy:{' '}
+                    <input
+                        onChange={(e) => setPhysical(Number(e.target.value))}
+                    />
+                    em:{' '}
+                    <input
+                        onChange={(e) => setEmotional(Number(e.target.value))}
+                    />
+                    foc:{' '}
+                    <input onChange={(e) => setFocus(Number(e.target.value))} />
+                    pass:{' '}
+                    <input onChange={(e) => setPassword(e.target.value)} />
+                    <button onClick={() => saveMood()}>Spremi</button>
+                    {JSON.stringify(saveMoodResponse)}
                 </div>
             ) : (
-                <button onClick={login}>
-                    Log in here.
-                </button>
+                <button onClick={login}>Log in here.</button>
             )}
 
             <PageInfoWidget position="top">
-                <div>Mongoose, express, next</div>
+                <div>
+                    MongoDB, Express with mongoose as api, Netlify indentity for
+                    new entries
+                </div>
                 <br />
                 <a href="/">
                     <img
