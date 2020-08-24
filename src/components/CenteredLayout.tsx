@@ -4,6 +4,7 @@ import styled from '@emotion/styled';
 import React, { useContext } from 'react';
 
 import { ThemeContext, ThemeContextType } from '../util/themeContext';
+import AverageMood from './AverageMood';
 
 const LayoutWrapper = styled.div`
     display: flex;
@@ -16,10 +17,11 @@ const LayoutWrapper = styled.div`
 
 const Header = styled.div`
     display: flex;
+    justify-content: space-between;
     height: 50px;
     background: ${(props: ThemeContextType) => props.primaryColor};
     align-items: center;
-    padding-left: 50px;
+    padding: 0 50px;
     font-size: 22px;
     color: white;
     font-weight: 600;
@@ -27,6 +29,10 @@ const Header = styled.div`
     a {
         color: white;
         text-decoration: none;
+    }
+
+    @media all and (max-width: 640px) {
+        padding: 0 15px;
     }
 `;
 
@@ -62,13 +68,13 @@ const CenteredLayout: React.FC = (props: Props): JSX.Element => {
         <LayoutWrapper {...theme}>
             <Header {...theme}>
                 <a href="/">mariovisnjic.com</a>
+
+                <AverageMood limitNumber={15} />
             </Header>
 
             <Content {...theme}>{props.children}</Content>
 
-            <Footer {...theme}>
-                <p></p>
-            </Footer>
+            <Footer {...theme} />
         </LayoutWrapper>
     );
 };

@@ -14,17 +14,7 @@ interface Props {
     fakeProp: string;
 }
 
-interface MoodResponse {
-    success: boolean;
-    data: {
-        physical: number;
-        emotional: number;
-        focus: number;
-    };
-}
-
 const Mood: NextPage<Props> = () => {
-    const [moodAverage, setMoodAverage] = useState<MoodResponse | undefined>();
     const [physical, setPhysical] = useState(0);
     const [emotional, setEmotional] = useState(0);
     const [focus, setFocus] = useState(0);
@@ -39,15 +29,6 @@ const Mood: NextPage<Props> = () => {
             setLoggedIn(!!user);
         });
     }, [loggedIn]);
-
-    useEffect(() => {
-        async function fetchApiKey() {
-            axios
-                .get(publicRuntimeConfig.API_URL + '/mood')
-                .then((response) => setMoodAverage(response.data));
-        }
-        fetchApiKey();
-    }, []);
 
     const saveMood = () => {
         axios
@@ -74,21 +55,13 @@ const Mood: NextPage<Props> = () => {
     return (
         <Layout>
             <Head>
-                <title>Mario Višnjić | Chrome notes extension</title>
+                <title>Mario Višnjić | Mood</title>
             </Head>
             <TitleSection
                 mainTitle="MOOD"
                 backgroundImage="../static/chromeNotesExtension/title.png"
                 backgroundPosition="top right"
             />
-
-            {moodAverage?.success && (
-                <div>
-                    <p>physical: {moodAverage.data.physical}</p>
-                    <p>emotional: {moodAverage.data.emotional}</p>
-                    <p>focus: {moodAverage.data.focus}</p>
-                </div>
-            )}
 
             {loggedIn ? (
                 <div>
