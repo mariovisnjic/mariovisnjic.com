@@ -178,14 +178,19 @@ const Home: NextPage<Props> = () => {
                         )}
                     </StepPick>
 
-                    <StepPick {...stepPickProps(99)}>
-                        <p>
-                            Download it on{' '}
-                            <a href="https://chrome.google.com/webstore/detail/chrome-note-extension/hgogikjgakjonhalnhlmbcggmajhdgli">
-                                Chrome web store
-                            </a>
-                        </p>
-                    </StepPick>
+                    <p>
+                        Download it on{' '}
+                        <a href="https://chrome.google.com/webstore/detail/chrome-note-extension/hgogikjgakjonhalnhlmbcggmajhdgli">
+                            Chrome web store
+                        </a>
+                    </p>
+
+                    <p>
+                        Check it on{' '}
+                        <a href="https://github.com/mariovisnjic/chromeNotesExtension">
+                            GitHub
+                        </a>
+                    </p>
                 </div>
 
                 <div>{!isMobile && <img src={activeImage} alt="step1" />}</div>

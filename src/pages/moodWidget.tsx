@@ -14,7 +14,7 @@ interface Props {
     fakeProp: string;
 }
 
-const Mood: NextPage<Props> = () => {
+const MoodWidget: NextPage<Props> = () => {
     const [physical, setPhysical] = useState(0);
     const [emotional, setEmotional] = useState(0);
     const [focus, setFocus] = useState(0);
@@ -86,8 +86,8 @@ const Mood: NextPage<Props> = () => {
 
             <PageInfoWidget position="top">
                 <div>
-                    MongoDB, Express with mongoose as api, Netlify indentity for
-                    new entries
+                    MongoDB as database, Express.JS with mongoose as API,
+                    Netlify indentity for protecting new entries
                 </div>
                 <br />
                 <a href="/">
@@ -113,4 +113,4 @@ const Mood: NextPage<Props> = () => {
     );
 };
 
-export default Mood;
+export default MoodWidget;

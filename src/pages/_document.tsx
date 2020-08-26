@@ -26,7 +26,6 @@ class MyDocument extends NextDocument<Props> {
                         href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap"
                         rel="stylesheet"
                     />
-                    <title>Mario Višnjić</title>
                 </Head>
                 <body>
                     <Main />

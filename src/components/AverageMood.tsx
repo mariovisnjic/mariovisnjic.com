@@ -3,7 +3,7 @@ import { jsx } from '@emotion/core';
 import styled from '@emotion/styled';
 import axios from 'axios';
 import getConfig from 'next/config';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 const { publicRuntimeConfig } = getConfig();
 
 const Icon = styled.img`
@@ -47,7 +47,7 @@ const AverageMood = (props: Props): JSX.Element | null => {
     }
 
     return (
-        <a href="/mood">
+        <a href="/mood-widget">
             <Icon
                 src="../static/common/header/emotional.png"
                 {...{
