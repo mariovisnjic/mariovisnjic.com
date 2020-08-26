@@ -1,8 +1,7 @@
 import styled from '@emotion/styled';
-import axios from 'axios';
 import { NextPage } from 'next';
 import Head from 'next/head';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 import Layout from '../components/Layout';
 import PageInfoWidget from '../components/PageInfoWidget';
@@ -11,6 +10,7 @@ import TitleSection from '../components/TitleSection';
 const DisplayWrapper = styled.div`
     display: flex;
     justify-content: center;
+    align-content: center;
     padding: 50px 0;
 `;
 
@@ -32,10 +32,19 @@ const MoodWidget: NextPage<Props> = () => {
 
             <DisplayWrapper>
                 <div>
-                    Check it on{' '}
-                    <a href="https://github.com/mariovisnjic/netlify-express-server">
-                        GitHub
-                    </a>
+                    <p>Express.js server as REST API</p>
+                    <p>Used as API for all other apps</p>
+                    <p>Communicates with MongoDB with mongoose</p>
+                    <p>
+                        netlify-lambda and serverless-http makes it possible
+                        host it and automatically deploy on Netlify
+                    </p>
+                    <p>
+                        Check it on{' '}
+                        <a href="https://github.com/mariovisnjic/netlify-express-server">
+                            GitHub
+                        </a>
+                    </p>
                 </div>
             </DisplayWrapper>
 
