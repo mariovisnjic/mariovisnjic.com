@@ -21,7 +21,7 @@
 		"google-map-react": "2.0.8",
 		"isomorphic-unfetch": "^3.0.0",
 		"netlify-identity-widget": "^1.9.1",
-		"next": "9.5.2",
+		"next": "9.5.4",
 		"next-connect": "0.8.1",
 		"next-fonts": "1.4.0",
 		"next-images": "1.4.1",
