@@ -14,7 +14,7 @@
 		"@emotion/babel-preset-css-prop": "^10.0.17",
 		"@emotion/core": "^10.0.21",
 		"@emotion/styled": "^10.0.27",
-		"axios": "0.20.0",
+		"axios": "0.21.1",
 		"dotenv": "8.2.0",
 		"emotion-normalize": "^10.1.0",
 		"emotion-theming": "10.0.27",
