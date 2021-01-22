@@ -47,6 +47,11 @@ const PROJECTS = [
         _id: 3,
         url: '/mood-widget',
         description: 'Widget that displays average mood'
+    },
+    {
+        _id: 4,
+        url: 'https://minesweeper.mariovisnjic.com',
+        description: 'React Minesweeper'
     }
 ];
 
